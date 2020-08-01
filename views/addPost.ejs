@@ -1,0 +1,52 @@
+
+<style>
+  
+    .row{
+      padding-top:280px;
+      min-height: 100vh;
+    }
+    
+    h1,
+    h1 a:hover{
+      text-align:center;
+      text-decoration:none;
+    }
+    
+
+  
+  </style>
+  <div class="container">
+    <div class="row">
+  
+<form action="/novosti" method="post">
+        
+    <div class="form-group">
+      <input class="form-control" type="text" name="naslov" placeholder="naslov">
+    </div>
+    
+  
+    <div class="form-group">
+      <input class="form-control" type="text" name="images" placeholder="url slike">
+    
+    </div>
+    
+    <select name="category">
+      <option value="Preminuli">Preminuli</option>
+      <option value="Župne obavijesti">Župne obavijesti </option>
+      <option value="Ostalo">Ostalo</option>
+    </select>
+    
+    <div class="form-group">
+      <textarea class="form control" name="description" rows="10" cols="30" placeholder="Tekst..."></textarea>
+    </div>
+    
+    <div class="form-group">
+              <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+    </div>
+    
+  </form>  </div>
+  <h1 ><a href="/">Vrati se </a></h1>
+
+</div>
+</div>
+

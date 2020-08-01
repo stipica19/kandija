@@ -1,0 +1,27 @@
+{
+  "name": "zupakandija",
+  "version": "1.0.0",
+  "description": "prva verzija",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stipica19/kandija.git"
+  },
+  "author": "stipica klepic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stipica19/kandija/issues"
+  },
+  "homepage": "https://github.com/stipica19/kandija#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25"
+  }
+}
