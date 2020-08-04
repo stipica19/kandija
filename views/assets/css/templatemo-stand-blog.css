@@ -334,7 +334,7 @@ header .navbar {
 }
 
 .blog-posts .blog-thumb img {
-	width: 50%;
+	width:100%;
 	overflow: hidden;
 	float: left;
 	margin-right:10px ;

@@ -1,13 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const multer = require("multer");
 const app = express();
 const path = require("path");
 const Novosti = require("./models/posts");
 
-const pocetnaRoutes = require("./routes/index");
-const novostiRoutes = require("./routes/novosti");
-const preminuliRoutes = require("./routes/preminuli");
+const pocetnaRoutes = require("./routes/index"),
+  novostiRoutes = require("./routes/novosti"),
+  preminuliRoutes = require("./routes/preminuli");
+const grobljaRoutes = require("./routes/groblja");
 
 app.use(express.static("views")); //omogucava serviranje statickih fajlova u browser
 app.set("view engine", "ejs");
@@ -39,7 +41,10 @@ app.get("/admin", (req, res) => {
     }
   });
 });
+
 app.use("/novosti", novostiRoutes);
+app.use("/preminuli", preminuliRoutes);
+app.use("/groblja", grobljaRoutes);
 
 app.listen(3000, (req, res) => {
   console.log("SERVER JE STARTOVAN NA PORTU 3000");

@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
     }
   });
 });
-
 router.post("/", (req, res) => {
   console.log("Usli smo u post od novosit");
   const novost = new Novosti({
