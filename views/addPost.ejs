@@ -1,4 +1,7 @@
-
+<%- include ('partials/header.ejs') %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
 <style>
   
     .row{
@@ -11,40 +14,42 @@
       text-align:center;
       text-decoration:none;
     }
-    
-
   
   </style>
+  
   <div class="container">
     <div class="row">
-  
-<form action="/novosti" method="post">
+  <div class="col-md-12">
+    <h1>DODAVANJE NOVIH NOVOSTI</h1>
+    <form action="/novosti" method="post">
         
-    <div class="form-group">
-      <input class="form-control" type="text" name="naslov" placeholder="naslov">
-    </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="naslov" placeholder="naslov">
+      </div>
+      
     
-  
-    <div class="form-group">
-      <input class="form-control" type="text" name="images" placeholder="url slike">
-    
-    </div>
-    
-    <select name="category">
-      <option value="Preminuli">Preminuli</option>
-      <option value="Župne obavijesti">Župne obavijesti </option>
-      <option value="Ostalo">Ostalo</option>
-    </select>
-    
-    <div class="form-group">
-      <textarea class="form control" name="description" rows="10" cols="30" placeholder="Tekst..."></textarea>
-    </div>
-    
-    <div class="form-group">
-              <button class="btn btn-lg btn-primary btn-block"> Submit </button>
-    </div>
-    
-  </form>  </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="images" placeholder="url slike">
+      
+      </div>
+      
+      <select name="category" class="form-control">
+        <option value="Preminuli">Preminuli</option>
+        <option value="Župne obavijesti">Župne obavijesti </option>
+        <option value="Ostalo">Ostalo</option>
+      </select>
+      
+      <div class="form-group">
+        <textarea class="form-control" name="description" rows="10" cols="50" placeholder="Tekst..."></textarea>
+      </div>
+      
+      <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+      </div>
+      
+    </form>
+  </div>
+  </div>
   <h1 ><a href="/">Vrati se </a></h1>
 
 </div>

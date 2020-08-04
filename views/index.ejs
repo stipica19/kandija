@@ -43,13 +43,15 @@
         <div class="col-lg-8 ljeva">
           <div class="all-blog-posts">
             <div class="row">
-              <div class="col-lg-12">
+          <% for(var i= novosti.length-1; i > novosti.length-4 ; i--) { %>
+               
+                <div class="col-lg-12">
                 <div class="blog-post">
 
                   <div class="down-content">
                     <span>Preminuli</span>
                     <a href="post-details.html">
-                      <h4>SV RODJO xd</h4>
+                      <h4><%= novosti[i].naslov %></h4>
                     </a>
                     <ul class="post-info">
                       <li><a href="#">Admin</a></li>
@@ -61,25 +63,7 @@
                       <img src="https://www.zupa-skopaljska-gracanica.com/images/vijesti/2020/Katedrala_Sa.jpg" alt="">
                       <p class="kratki-tekst">14. lipnja 2020.
                         Proslava sv. Ante Padovanskog u Bugojnu
-                        Mons. Stanislav Hočevar, nadbiskup i metropolita beogradski, predslavio je središnje misno
-                        slavlje sv. Ante Padovanskog, 13. lipnja 2020., u prepunoj bugojanskoj župnoj crkvi. Mons.
-                        Hočevar je u propovijedi istaknuo kako dolazi u Bosnu i Hercegovinu kao hodočasnik prisjećajući
-                        se osobnih susreta sa franjevcima Bosne još dok je bio student teologije u Križevcima, a onda
-                        kasnije i kao beogradski nadbiskup. Naglasio je duhovnu povezanost između župe sv. Ante
-                        Padovanskog u Beogradu kojom upravljaju franjevci iz Bosne i župne zajednice u Bugojnu koja je
-                        povjerena franjevcima. Zatim je govorio o pozivu i poslanju sv. Ante Padovanskog te njegovoj
-                        aktualnost u Bosni i Hercegovina kao i u drugim državama. Nakon sadržajne propovijedi, nadbiskup
-                        Hočevar, je blagoslovio novo zvono od 75 kg, izljeveno u talijanskoj ljevaonici DePoli, dar
-                        obitelji Pavlović, Mijatović i Steiner, koje će biti postavljeno na grobljansku kapelicu
-                        Sultanovići u Bugojnu. Uz nadbiskupa, koncelebriali su: župnik fra Hrvoje Radić i fra Marko
-                        Ćorić iz fojničkog samostana te fra Miro Relota, duhovnik franjevačkih bogoslova u Sarajevu,
-                        zatim, prečasni Ilija Ivoš, bugojanski dekan i župnik župe Srca Marijina u Skopaljskoj Gračanici
-                        – Humac, vlč. Tade Ivoš, župnik župe sv. Ilije u Kandiji, vlč. Mato Križanac, župnik župe sv.
-                        Male Terezije od Djeteta Isusa u Bistrici te vlč. Mihail Sokol, tajnik nadbiskupa beogradskoga.
-                        Istoga dana, fra Hrvoje Radić, župnik, slavio je jutarnju sv. Misu u 7 sati, fra Miro Relota,
-                        bolesničku u 9 sati te fra Ivan K. Pavlović, župni vikar u Bugojnu, večernju sv. Misu u 18 sati
-                        pod kojom se tradicionalno udjeljuje blagoslov djeci koja i ovoga puta nisu mogli ne doći u
-                        velikom broju i zatražiti zaštitu nebeskog zaštitnika djece.</p>
+          </p>
                     </div>
 
                     <div class="post-options">
@@ -102,118 +86,8 @@
                   <hr style="width:100%;text-align:left;margin-left:0">
                 </div>
               </div>
-              <div class="col-lg-12">
-                <div class="blog-post">
-
-                  <div class="down-content">
-                    <span>Preminuli</span>
-                    <a href="post-details.html">
-                      <h4>SV RODJO xd</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">02/12/2020</a></li>
-                      <li><a href="#">12 Pregleda</a></li>
-                    </ul>
-                    <div class="blog-thumb">
-
-                      <img src="https://www.zupa-skopaljska-gracanica.com/images/vijesti/2020/Katedrala_Sa.jpg" alt="">
-                      <p class="kratki-tekst">14. lipnja 2020.
-                        Proslava sv. Ante Padovanskog u Bugojnu
-                        Mons. Stanislav Hočevar, nadbiskup i metropolita beogradski, predslavio je središnje misno
-                        slavlje sv. Ante Padovanskog, 13. lipnja 2020., u prepunoj bugojanskoj župnoj crkvi. Mons.
-                        Hočevar je u propovijedi istaknuo kako dolazi u Bosnu i Hercegovinu kao hodočasnik prisjećajući
-                        se osobnih susreta sa franjevcima Bosne još dok je bio student teologije u Križevcima, a onda
-                        kasnije i kao beogradski nadbiskup. Naglasio je duhovnu povezanost između župe sv. Ante
-                        Padovanskog u Beogradu kojom upravljaju franjevci iz Bosne i župne zajednice u Bugojnu koja je
-                        povjerena franjevcima. Zatim je govorio o pozivu i poslanju sv. Ante Padovanskog te njegovoj
-                        aktualnost u Bosni i Hercegovina kao i u drugim državama. Nakon sadržajne propovijedi, nadbiskup
-                        Hočevar, je blagoslovio novo zvono od 75 kg, izljeveno u talijanskoj ljevaonici DePoli, dar
-                        obitelji Pavlović, Mijatović i Steiner, koje će biti postavljeno na grobljansku kapelicu
-                        Sultanovići u Bugojnu. Uz nadbiskupa, koncelebriali su: župnik fra Hrvoje Radić i fra Marko
-                        Ćorić iz fojničkog samostana te fra Miro Relota, duhovnik franjevačkih bogoslova u Sarajevu,
-                        zatim, prečasni Ilija Ivoš, bugojanski dekan i župnik župe Srca Marijina u Skopaljskoj Gračanici
-                        – Humac, vlč. Tade Ivoš, župnik župe sv. Ilije u Kandiji, vlč. Mato Križanac, župnik župe sv.
-                        Male Terezije od Djeteta Isusa u Bistrici te vlč. Mihail Sokol, tajnik nadbiskupa beogradskoga.
-                        Istoga dana, fra Hrvoje Radić, župnik, slavio je jutarnju sv. Misu u 7 sati, fra Miro Relota,
-                        bolesničku u 9 sati te fra Ivan K. Pavlović, župni vikar u Bugojnu, večernju sv. Misu u 18 sati
-                        pod kojom se tradicionalno udjeljuje blagoslov djeci koja i ovoga puta nisu mogli ne doći u
-                        velikom broju i zatražiti zaštitu nebeskog zaštitnika djece.</p>
-                    </div>
-
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-6">
-
-                        </div>
-                        <div class="col-6">
-                          <ul class="post-share">
-                            <li><i class="fa fa-share-alt"></i></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></li>
-
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="blog-post">
-
-                  <div class="down-content">
-                    <span>Preminuli</span>
-                    <a href="post-details.html">
-                      <h4>SV RODJO xd</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">02/12/2020</a></li>
-                      <li><a href="#">12 Pregleda</a></li>
-                    </ul>
-                    <div class="blog-thumb">
-
-                      <img src="https://www.zupa-skopaljska-gracanica.com/images/vijesti/2020/Katedrala_Sa.jpg" alt="">
-                      <p class="kratki-tekst">14. lipnja 2020.
-                        Proslava sv. Ante Padovanskog u Bugojnu
-                        Mons. Stanislav Hočevar, nadbiskup i metropolita beogradski, predslavio je središnje misno
-                        slavlje sv. Ante Padovanskog, 13. lipnja 2020., u prepunoj bugojanskoj župnoj crkvi. Mons.
-                        Hočevar je u propovijedi istaknuo kako dolazi u Bosnu i Hercegovinu kao hodočasnik prisjećajući
-                        se osobnih susreta sa franjevcima Bosne još dok je bio student teologije u Križevcima, a onda
-                        kasnije i kao beogradski nadbiskup. Naglasio je duhovnu povezanost između župe sv. Ante
-                        Padovanskog u Beogradu kojom upravljaju franjevci iz Bosne i župne zajednice u Bugojnu koja je
-                        povjerena franjevcima. Zatim je govorio o pozivu i poslanju sv. Ante Padovanskog te njegovoj
-                        aktualnost u Bosni i Hercegovina kao i u drugim državama. Nakon sadržajne propovijedi, nadbiskup
-                        Hočevar, je blagoslovio novo zvono od 75 kg, izljeveno u talijanskoj ljevaonici DePoli, dar
-                        obitelji Pavlović, Mijatović i Steiner, koje će biti postavljeno na grobljansku kapelicu
-                        Sultanovići u Bugojnu. Uz nadbiskupa, koncelebriali su: župnik fra Hrvoje Radić i fra Marko
-                        Ćorić iz fojničkog samostana te fra Miro Relota, duhovnik franjevačkih bogoslova u Sarajevu,
-                        zatim, prečasni Ilija Ivoš, bugojanski dekan i župnik župe Srca Marijina u Skopaljskoj Gračanici
-                        – Humac, vlč. Tade Ivoš, župnik župe sv. Ilije u Kandiji, vlč. Mato Križanac, župnik župe sv.
-                        Male Terezije od Djeteta Isusa u Bistrici te vlč. Mihail Sokol, tajnik nadbiskupa beogradskoga.
-                        Istoga dana, fra Hrvoje Radić, župnik, slavio je jutarnju sv. Misu u 7 sati, fra Miro Relota,
-                        bolesničku u 9 sati te fra Ivan K. Pavlović, župni vikar u Bugojnu, večernju sv. Misu u 18 sati
-                        pod kojom se tradicionalno udjeljuje blagoslov djeci koja i ovoga puta nisu mogli ne doći u
-                        velikom broju i zatražiti zaštitu nebeskog zaštitnika djece.</p>
-                    </div>
-
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-6">
-
-                        </div>
-                        <div class="col-6">
-                          <ul class="post-share">
-                            <li><i class="fa fa-share-alt"></i></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></li>
-
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <% } %>
+            
               <div class="col-lg-12">
                 <div class="main-button">
                   <a href="#">Pogledajte starije objave</a>

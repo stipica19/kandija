@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const GrobljaSchema = mongoose.Schema({
-  images: String,
+  images: [String],
   description: String,
   groblje: String,
 });

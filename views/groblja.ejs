@@ -97,76 +97,25 @@ https://templatemo.com/tm-551-stand-blog
         <center><h2 style="color:#6e0000; padding: 30px;">GROBLJA</h2></center>
       
         <div class="row">
-        
+        <% groblja.forEach((groblja)=>{%>
           <div class="col-md-6 col-lg-4">
             <div class="card border-0 transform-on-hover"> 
-                <a class="lightbox" href="img">
-                    <img src="https://www.zupa-skopaljska-gracanica.com/images/preminuli/2020/Zora_Topi%C4%87.jpg" class="card-img-top" />
+             
+              <a class="lightbox" href="img">
+               
+                    <img src="../public/uploads/<%=groblja.images %>" class="card-img-top" />
                 </a>
+                
                 <div class="card-body">
-                    <h6> <a href="#"></a>GRABOVI</h6>
+                    <h6> <a href="groblja/<%= groblja.groblje %>"><%= groblja.groblje %></a></h6>
                     <p class="text-muted card-text">Župa Srca Marijina u Skopaljskoj Gračanici ima 11 groblja od kojih se u 4 ukapaju, a svete mise se služe na svim grobljima u proljeće i jesen i Svi svete (Dušni dan), a ona su redom u sljedećim naseljima: Donja Ričica, Gornja Ričica, Pajić Polje, Šubić, Humac, Okolišće, Zlavast, Kordići, Lužani, Jazvenik, Pernice.
 
                       Klikom na sliku ispod otvara vam se galerija za pregled slika u pojedinim grobljima.</p>
 
                 </div>
-
             </div>
-
           </div>
-         
-      
-         
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover"> 
-                <a class="lightbox" href="img">
-                    <img src="assets/images/groblje_donja_ricica.jpg" class="card-img-top" />
-                </a>
-                <div class="card-body">
-                    <h6> <a href="#"></a>GRABOVI</h6>
-                    <p class="text-muted card-text">Župa Srca Marijina u Skopaljskoj Gračanici ima 11 groblja od kojih se u 4 ukapaju, a svete mise se služe na svim grobljima u proljeće i jesen i Svi svete (Dušni dan), a ona su redom u sljedećim naseljima: Donja Ričica, Gornja Ričica, Pajić Polje, Šubić, Humac, Okolišće, Zlavast, Kordići, Lužani, Jazvenik, Pernice.
-
-                      Klikom na sliku ispod otvara vam se galerija za pregled slika u pojedinim grobljima.</p>
-
-                </div>
-
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover"> 
-                <a class="lightbox" href="img">
-                    <img src="assets/images/groblje_donja_ricica.jpg" class="card-img-top" />
-                </a>
-                <div class="card-body">
-                    <h6> <a href="#"></a>GRABOVI</h6>
-                    <p class="text-muted card-text">Župa Srca Marijina u Skopaljskoj Gračanici ima 11 groblja od kojih se u 4 ukapaju, a svete mise se služe na svim grobljima u proljeće i jesen i Svi svete (Dušni dan), a ona su redom u sljedećim naseljima: Donja Ričica, Gornja Ričica, Pajić Polje, Šubić, Humac, Okolišće, Zlavast, Kordići, Lužani, Jazvenik, Pernice.
-
-                      Klikom na sliku ispod otvara vam se galerija za pregled slika u pojedinim grobljima.</p>
-
-                </div>
-
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover"> 
-                <a class="lightbox" href="img">
-                    <img src="assets/images/groblje_donja_ricica.jpg" class="card-img-top" />
-                </a>
-                <div class="card-body">
-                    <h6> <a href="#"></a>GRABOVI</h6>
-                    <p class="text-muted card-text">Župa Srca Marijina u Skopaljskoj Gračanici ima 11 groblja od kojih se u 4 ukapaju, a svete mise se služe na svim grobljima u proljeće i jesen i Svi svete (Dušni dan), a ona su redom u sljedećim naseljima: Donja Ričica, Gornja Ričica, Pajić Polje, Šubić, Humac, Okolišće, Zlavast, Kordići, Lužani, Jazvenik, Pernice.
-
-                      Klikom na sliku ispod otvara vam se galerija za pregled slika u pojedinim grobljima.</p>
-
-                </div>
-
-            </div>
-
-          </div>
-        
-        
+          <%});%>
         </div>
       </div>
     </section>

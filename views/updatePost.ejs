@@ -1,8 +1,12 @@
 
+<%- include ('partials/header.ejs') %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
 <style>
   
     .row{
-      padding-top:280px;
+      padding-top:20px;
       min-height: 100vh;
     }
     
@@ -30,18 +34,18 @@
     
     </div>
     
-    <select name="category">
+    <select name="category" class="form-control">
       <option value="Preminuli">Preminuli</option>
       <option value="Župne obavijesti">Župne obavijesti </option>
       <option value="Ostalo">Ostalo</option>
     </select>
     
     <div class="form-group">
-      <textarea class="form control" name="description" rows="10" cols="30" placeholder="Tekst..." ><%= novost.description %></textarea>
+      <textarea class="form-control" name="description" rows="10" cols="50" placeholder="Tekst..." ><%= novost.description %></textarea>
     </div>
     
     <div class="form-group">
-              <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+              <button class="btn btn-lg btn-primary btn-block"> SPREMI </button>
     </div>
     
   </form>  </div>

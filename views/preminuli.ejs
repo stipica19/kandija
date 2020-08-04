@@ -105,11 +105,11 @@ https://templatemo.com/tm-551-stand-blog
           <% preminuli.forEach((preminuli)=>{ %>
           <div class="col-md-6 col-lg-6">
             <div class="card border-0 transform-on-hover"> 
-                <a class="lightbox" href="img">
-                    <img src="<%= preminuli.images %>" class="card-img-top" />
-                </a>
+                
+                    <img src="<%= preminuli.images %>" class="card-img-top img-fluid popup" />
+                
                 <div class="card-body">
-                    <h6> <a href="#"></a><%= preminuli.naslov%><br><%= preminuli.datum.toLocaleDateString() %></h6>
+                    <h6> <%= preminuli.naslov%><br><%= preminuli.datum.toLocaleDateString() %></h6>
                     <p class="text-muted card-text"></p>
 
                 </div>
@@ -117,6 +117,14 @@ https://templatemo.com/tm-551-stand-blog
 
           </div>
           <% });%>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <img class=" w-100" id="popup-img" src="" alt="">
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>

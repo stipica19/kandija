@@ -33,6 +33,15 @@ connection.once("open", () => {
 app.get("/add", (req, res) => {
   res.render("addPost");
 });
+app.get("/", (req, res) => {
+  Novosti.find({}, (err, sveNovosti) => {
+    if (err) console.log(err);
+    else {
+      console.log("PODACI" + sveNovosti);
+      res.render("index", { novosti: sveNovosti });
+    }
+  });
+});
 app.get("/admin", (req, res) => {
   Novosti.find({}, (err, sveNovosti) => {
     if (err) console.log(err);
