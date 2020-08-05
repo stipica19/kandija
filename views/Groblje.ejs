@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-stand-blog.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="gallery-grid.css">
 <!--
 
 TemplateMo 551 Stand Blog
@@ -91,35 +95,29 @@ https://templatemo.com/tm-551-stand-blog
     </div>
     
     <!-- Banner Ends Here -->
-    <section class="gallery-block cards-gallery">
-      <div class="container">
-  
-        <center><h2 style="color:#6e0000; padding: 30px;">GROBLJA</h2></center>
+   
       
-        <div class="row">
-        <% groblja.forEach((groblja)=>{%>
-          <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover"> 
-            
-                <%  for(var i=0; i<1 ;i++)  {%>
-              <a class="lightbox" href="img">
-                <img src="../views/public/<%= groblja.images[0]%>" class="card-img-top" />
-                   
-                </a>
-               <%}%>
-                <div class="card-body">
-                    <h6> <a href="/groblja/<%= groblja.groblje %>"><%= groblja.groblje %></a></h6>
-                    <p class="text-muted card-text">Župa Srca Marijina u Skopaljskoj Gračanici ima 11 groblja od kojih se u 4 ukapaju, a svete mise se služe na svim grobljima u proljeće i jesen i Svi svete (Dušni dan), a ona su redom u sljedećim naseljima: Donja Ričica, Gornja Ričica, Pajić Polje, Šubić, Humac, Okolišće, Zlavast, Kordići, Lužani, Jazvenik, Pernice.
 
-                      Klikom na sliku ispod otvara vam se galerija za pregled slika u pojedinim grobljima.</p>
 
+      <div class="container gallery-container">
+        <% groblje.forEach((groblje,index)=>{%>
+        <h1><%= groblje.groblje%></h1>
+            <div class="tz-gallery">    
+            <div class="row">
+                            <% for(var i=0 ; i < groblje.images.length; i++)  {%>
+                <div class="col-sm-6 col-md-4">
+                
+                    <a class="lightbox" href="../views/public/<%= groblje.images[i]%>">
+                        <img src="../views/public/<%= groblje.images[i]%>" alt="Park">
+                    </a>
                 </div>
-            </div>
-          </div>
-          <%});%>
-        </div>
-      </div>
-    </section>
+                <%}%>   
+            </div>    
+        </div> 
+        <h5><%= groblje.description%></h5>
+        <%});%>     
+    </div>
+      
 
     
     <footer>
@@ -148,7 +146,11 @@ https://templatemo.com/tm-551-stand-blog
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
+   <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
 
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>

@@ -5,9 +5,12 @@ const router = express.Router();
 const path = require("path");
 const Groblje = require("../models/groblja");
 
+router.use(express.static("views"));
+router.use("/", express.static(__dirname + "/public"));
+
 //Set Storage Engine
 const storage = multer.diskStorage({
-  destination: "./public/uploads/",
+  destination: "./views/public/",
   filename: (req, file, cb) => {
     cb(
       null,
@@ -109,7 +112,7 @@ router.get("/:groblje", (req, res) => {
       console.log(err);
     } else {
       console.log(`Usli smo u rutu ${req.params.groblje}`);
-      res.render("groblje", { groblje: trazenoGroblje });
+      res.render("Groblje", { groblje: trazenoGroblje });
     }
   });
 });
