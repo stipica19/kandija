@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   Novosti.find({}, (err, sveNovosti) => {
     if (err) console.log(err);
     else {
-      console.log("PODACI" + sveNovosti);
+      //console.log("PODACI" + sveNovosti);
       res.render("blog", { novosti: sveNovosti });
     }
   });

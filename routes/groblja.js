@@ -6,7 +6,6 @@ const path = require("path");
 const Groblje = require("../models/groblja");
 
 router.use(express.static("views"));
-router.use("/", express.static(__dirname + "/public"));
 
 //Set Storage Engine
 const storage = multer.diskStorage({
@@ -117,4 +116,30 @@ router.get("/:groblje", (req, res) => {
   });
 });
 
+/*EDITOVANJE GROBLJA */
+/*EDITOVANJE GROBLJA */
+router.get("/:groblje/edit", (req, res) => {
+  Groblje.findOne({ groblje: req.params.groblje }, (err, trazenoGroblje) => {
+    if (err) {
+      console.log("Greška u traženjuGROBLJA ZA UPDATE " + err);
+    } else {
+      //console.log("Nadjeno je + " + trazenoGroblje);
+      res.render("updateGroblje", { groblje: trazenoGroblje });
+    }
+  });
+});
+
+router.post("/delete/:images", (req, res) => {
+  Groblje.findOneAndUpdate(
+    { images: req.params.images },
+    { $pull: { images: req.params.images } },
+    { new: true },
+    (err, node) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log("Uspiješno izbrisana slika od groblja" + node.images);
+    }
+  );
+});
 module.exports = router;

@@ -12,7 +12,9 @@ const pocetnaRoutes = require("./routes/index"),
 const grobljaRoutes = require("./routes/groblja");
 
 app.use(express.static("views")); //omogucava serviranje statickih fajlova u browser
+
 app.use("/", express.static(__dirname + "/"));
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 

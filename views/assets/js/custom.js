@@ -97,6 +97,11 @@ $(document).ready(function () {
     $(this).text(newstr);
   });
 });
+console.log("Tekst");
+
+var myDiv = $(".ttt");
+myDiv.text(myDiv.text().substring(0, 180));
+$(".ttt").append("...");
 
 $("img").click(function () {
   var src = $(this).attr("src");
