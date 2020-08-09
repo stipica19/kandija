@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
 
   <%- include ('partials/header.ejs') %>
 <body>
 
   <!-- ***** Preloader Start ***** -->
-  <div id="preloader">
-    <div class="jumper">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+ 
   <!-- ***** Preloader End ***** -->
 
  
@@ -60,10 +52,9 @@
                     </ul>
                     <div class="blog-thumb">
 
-                      <img src="https://www.zupa-skopaljska-gracanica.com/images/vijesti/2020/Katedrala_Sa.jpg" alt="">
+                      <img src="<%= novosti[i].images %>" alt="">
                       <p class="kratki-tekst">14. lipnja 2020.
-                        Vijest je objavio Tiskovni ured Svete Stolice točno u podne. Novi nadbiskup će tako napustiti dosadašnje biskupije te će u dogledno vrijeme naslijediti sadašnjeg splitsko-makarskog nadbiskupa mons. Marina Barišića koji 24. ožujka 2022. puni kanonsku dob od 75 godina kada svoj mandat, prema Zakoniku kanonskog prava, stavlja na raspolaganje Papi.',
-          </p>
+                        <%= novosti[i].description %>          </p>
                     </div>
 
                     <div class="post-options">
@@ -90,7 +81,7 @@
             
               <div class="col-lg-12">
                 <div class="main-button">
-                  <a href="#">Pogledajte starije objave</a>
+                  <a href="/novosti">Pogledajte starije objave</a>
                 </div>
               </div>
             </div>

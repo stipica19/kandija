@@ -91,19 +91,18 @@ jQuery(document).ready(function ($) {
 });
 
 $(document).ready(function () {
-  console.log("USli");
   $(".kratki-tekst").each(function (f) {
     var newstr = $(this).text().substring(0, 1000);
     $(this).text(newstr);
   });
 });
-console.log("Tekst");
 
 var myDiv = $(".ttt");
 myDiv.text(myDiv.text().substring(0, 180));
 $(".ttt").append("...");
 
 $("img").click(function () {
+  console.log("HALo");
   var src = $(this).attr("src");
   $(".modal").modal("show");
   $("#popup-img").attr("src", src);

@@ -337,6 +337,7 @@ header .navbar {
     font-weight: bold;
 }
 
+
 .gallery-container p.page-description {
     text-align: center;
     max-width: 800px;
@@ -381,6 +382,69 @@ header .navbar {
     }
 }
 /*END GALLRY*/
+/*UPDATE GALLERY*/
+.delete {
+    cursor: pointer !important;
+    font-size: 30px;
+    position: absolute;
+    color: white;
+    border: none;
+    background: none;
+    right: -15px;
+    top: -15px;
+    line-height: 1;
+    z-index: 99;
+    padding: 0;
+}
+.delete span {
+    height: 30px;
+    width: 30px;
+    background-color: rgba(255, 0, 0, 0.664);
+    border-radius: 50%;
+    display: block;
+}
+
+.box{
+    width: calc((100% - 30px) * 0.333);
+    margin: 5px;
+    height: 250px;
+    background: #CCCCCC;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 5px 2px rgba(161, 47, 47, 0.15);
+}
+
+.box:hover{
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.5);
+}
+
+.box .image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.box .image img{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+@media (max-width: 600px) {
+    .box{
+        width: calc((100% - 20px) * 0.5);
+        height: 200px;
+    }
+}
+
+
 
 /* Blog Posts */
 

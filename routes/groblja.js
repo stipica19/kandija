@@ -138,8 +138,27 @@ router.post("/delete/:images", (req, res) => {
       if (err) {
         console.log(err);
       }
-      console.log("Uspiješno izbrisana slika od groblja" + node.images);
+      //console.log("Uspiješno izbrisana slika od groblja" + node.images);
     }
   );
 });
+
+/*AZURIRANJE GROBLJA JEDNOG */
+router.post("/:groblje", (req, res) => {
+  console.log("DOslo za update :  " + req.body.description);
+  Groblje.findOneAndUpdate(
+    { groblje: req.params.groblje },
+    { $set: { description: req.body.description } },
+    { new: true },
+    (err, azuriranoGroblje) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("USPJESNO AZURIRANJA GROBLJA" + azuriranoGroblje);
+      }
+      res.redirect("/groblja/" + req.params.groblje);
+    }
+  );
+});
+
 module.exports = router;

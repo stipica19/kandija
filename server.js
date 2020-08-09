@@ -6,10 +6,10 @@ const app = express();
 const path = require("path");
 const Novosti = require("./models/posts");
 
-const pocetnaRoutes = require("./routes/index"),
-  novostiRoutes = require("./routes/novosti"),
-  preminuliRoutes = require("./routes/preminuli");
+const novostiRoutes = require("./routes/novosti");
+const preminuliRoutes = require("./routes/preminuli");
 const grobljaRoutes = require("./routes/groblja");
+const indexRoutes = require("./routes/index");
 
 app.use(express.static("views")); //omogucava serviranje statickih fajlova u browser
 
@@ -57,6 +57,7 @@ app.get("/admin", (req, res) => {
 app.use("/novosti", novostiRoutes);
 app.use("/preminuli", preminuliRoutes);
 app.use("/groblja", grobljaRoutes);
+app.use(indexRoutes);
 
 app.listen(3000, (req, res) => {
   console.log("SERVER JE STARTOVAN NA PORTU 3000");
