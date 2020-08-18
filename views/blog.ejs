@@ -1,5 +1,8 @@
 <%- include ('partials/header.ejs') %>
+<script>
+     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
+</script>
   <!-- Page Content -->
   <!-- Banner Starts Here -->
   <div class="heading-page header-text">
@@ -35,24 +38,33 @@
                   <div class="down-content">
                     <span><%= novost.category %></span>
                     <a href="/novosti/<%=novost._id%>">
-                      <h4>a<%= novost.naslov %></h4>
+                      <h4><%= novost.naslov %></h4>
                     </a>
                     <ul class="post-info">
                       <li>Admin</a></li>
-                      <li><%= novost.datum.toLocaleDateString() %></li>
+                      <li><%= novost.datum.toLocaleDateString('hr-EG',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></li>
                       
                     </ul>
-                    <p class="ttt" ><%= novost.description %>  </p><a href="/novosti/<%= novost._id%>">Opširnije</a>
+                    <p class="ttt" id="log" > 
+                      
+                     
+                      
+                          
+                       <%=  novost.description%> 
+                          
+                   
+                      
+                       </p><a href="/novosti/<%= novost._id%>">Opširnije</a>
                     <div class="post-options">
                       <div class="row">
                         <div class="col-lg-12">
                           <ul class="post-share">
-                            <li><i class="fa fa-share-alt"></i></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></li>
+                            
 <li><div class="fb-share-button" 
-  data-href="https://www.your-domain.com/your-page.html" 
-  data-layout="button_count">
-  </div></li>
+  data-href="https://www.facebook.com/stipica19"
+   data-layout="button_count" data-size="small">
+   <a target="_blank"
+    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fstipica19&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fa fa-facebook"></i></a></div></li>
                           </ul>
                         </div>
                       </div>
@@ -60,19 +72,81 @@
                   </div>
                 </div>
               </div>
+              <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/hr_HR/sdk.js#xfbml=1&version=v8.0&appId=715696709360363&autoLogAppEvents=1" nonce="gz1hy9GG"></script>
               <% });%>
-              
+              <div id="di"></div>
               
            
-              <div class="col-lg-12">
-                <ul class="page-numbers">
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                </ul>
-              </div>
+              <div class="paginator col-lg-12">
+                <% if (typeof(totalPages) != "undefined" && totalPages > 0) { %>
+                <nav class="mt-4" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center ">
+                        <!-- First page button -->
+                        <% if (Number(current) === 1) { %>
+                            <li class="page-item disabled"><a class="page-link">Početna</a></li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/novosti?page=1<%if(search){%>?search=<%=search%><%}%>">Početna</a>
+                            </li>
+                        <% } %>
+                        <!-- Previous page button -->
+                        <% if (Number(current) === 1) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/novosti?page=<%= Number(current)-1 %><%if(search){%>?search=<%=search%><%}%>">
+                                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        <% } %>
+                        
+                        <% var i = (Number(current) > 3 ? Number(current) - 2 : 1) %>
+                        <% if (i !== 1) { %>
+                            <li class="page-item disabled"><a class="page-link">...</a></li>
+                        <% } %>
+                        
+                        <% for (; i <= totalPages && i <= (Number(current) + 2); i++) { %>
+                            <% if (i === Number(current)) { %>
+                                <li class="page-item active"><a class="page-link"><%= current %></a></li>
+                            <% } else { %>
+                                <li class="page-item">
+                                    <a class="page-link" href="/novosti?page=<%=i%><%if(search){%>?search=<%=search%><%}%>"><%= i %></a>
+                                </li>
+                            <% } %>
+                            
+                            <% if (i === (Number(current) + 2) && i < totalPages) { %>
+                                <li class="page-item disabled"><a class="page-link">...</a></li>
+                            <% } %>
+                        <% } %>
+                        <!-- Next page button -->
+                        <% if (Number(current) === totalPages) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/novosti?page=<%= Number(current)+1 %><%if(search){%>?search=<%=search%><%}%>">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        <% } %>
+                        <!-- Last page button -->
+                        <% if (Number(current) === totalPages) { %>
+                            <li class="page-item disabled"><a class="page-link">Zadnja</a></li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/novosti?page=<%= totalPages %><%if(search){%>?search=<%=search%><%}%>">Last</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </nav>
+                <% } %>
             </div>
+            </div>
+            
           </div>
         </div>
         <div class="col-lg-4">
@@ -80,8 +154,8 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="sidebar-item search">
-                  <form id="search_form" name="gs" method="GET" action="#">
-                    <input type="text" name="search_text" id="search_text" class="searchText"  style="font-family: FontAwesome;"  placeholder="&#xf002 Traži..." autocomplete="on">
+                  <form action="/novosti" method="GET" class="form-inline">
+                    <input type="text" name="search" placeholder="Traži..">                    <input type="submit" onclick="myFunction()" value="Pretraži">
                   </form>
                 </div>
               </div>
@@ -93,7 +167,7 @@
                   </div>
                   <div class="content">
                     <ul>
-                      <li><a href="#">- PREMINULI</a></li>
+                      <li><a href="/preminuli">- PREMINULI</a></li>
                       <li><a href="#">- ŽUPNE OBAVIJESTI</a></li>
                       <li><a href="#">- PREMINULI</a></li>
                       <li><a href="#">- PREMINULI</a></li>
@@ -110,25 +184,24 @@
       </div>
     </div>
   </section>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
-    $(document).ready(function () {
+  <script>
+   
+//alert(myVar);
+
+
+// Append the parsed HTML
+
+    /* $(document).ready(function () {
         load_data();
         function load_data(query) {
             $.ajax({
-                url: "/filmovi/trazi",
-                method: "post",
+                url: "/novosti",
+                method: "GET",
                 data: { query: query },
                 success: function (data) {
-                    $("tbody").empty();
+                    $("#di").empty();
                     data.forEach(function (item) {
-                        $("tbody").append(`<tr><td>${item.ime}</td><td>${item.zanr}</td><td>${item.opis}</td><td>${item.godina_izdanja}</td><td>${item.trajanje} min</td> <a class="btn btn-secondary" onclick="update(${item.employeeId})">Uredi</a>&nbsp;<a class="btn btn-danger" onclick="odm(${item.employeeId})">Briši</a></td></tr>`);
+                        $("#di").append(`${item.naslov}`);
                     });
                 }
             });
@@ -142,9 +215,9 @@
             else {
                 $.ajax({
                     type: 'GET',
-                    url: '/filmovi/',
+                    url: '/novosti/',
                     success: (response) => {
-                        window.location = "/filmovi"
+                        window.location = "/novosti"
                     },
                     error: (e) => {
                         alert('error!')
@@ -154,7 +227,7 @@
             }
         });
     });
-
+ */
     
     
     </script>

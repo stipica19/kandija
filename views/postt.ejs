@@ -28,7 +28,9 @@
 
         <!-- Post Content -->
       
-        <p><%= novost.description%></p>
+        <p id="log">
+          
+        </p>
 
         <hr>
 
@@ -41,5 +43,17 @@
 
 </div>
 </section>
+<script>
+   let myVar = '<%- JSON.stringify(novost.description) %>';
+
+   var $log = $( "#log" );
+   str = `${myVar}`;
+   
+   html = $.parseHTML( str ),
+   nodeNames = [];
+ 
+// Append the parsed HTML
+   $log.append( html );
+</script>
  
 <%- include ('partials/footer.ejs') %>

@@ -58,7 +58,8 @@ h1,h2,h3,h4,h5,h6 {
 	text-align: left;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100%; 
+	
 	background-image: url(../images/kandija.jpg);
 	
 }
@@ -260,7 +261,7 @@ header .navbar {
 	color: #fff;
 	font-size: 18px;
 	line-height: 30px;
-	font-family: 'FontAwesome';
+	font-family:  'Montserrat',sans-serif;;
 }
 
 
@@ -327,7 +328,8 @@ header .navbar {
     color: #35373a;
     min-height: 100vh;
     border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+	
 }
 
 .gallery-container h1 {
@@ -618,6 +620,7 @@ ul.page-numbers li a:hover {
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;
+	
 }
 
 .blog-posts .comments {
@@ -889,7 +892,7 @@ footer ul.social-icons li a {
 }
 
 footer ul.social-icons li a:hover {
-	color: #6e00000;
+	color: #6e0000;
 }
 
 footer p {
@@ -923,6 +926,7 @@ footer p a:hover {
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;
+	margin-top: 130px;
 }
 
 .contact-us .contact-form input {

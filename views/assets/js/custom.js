@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
   // Page loading animation
 
-  $("#preloader").animate(
+  /* $("#preloader").animate(
     {
       opacity: "0",
     },
@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
         $("#preloader").css("visibility", "hidden").fadeOut();
       }, 300);
     }
-  );
+  ); */
 
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
@@ -92,8 +92,9 @@ jQuery(document).ready(function ($) {
 
 $(document).ready(function () {
   $(".kratki-tekst").each(function (f) {
-    var newstr = $(this).text().substring(0, 1000);
+    var newstr = $(this).text().substring(0, 180);
     $(this).text(newstr);
+    $(".kratki-tekst").append(".");
   });
 });
 
@@ -101,9 +102,19 @@ var myDiv = $(".ttt");
 myDiv.text(myDiv.text().substring(0, 180));
 $(".ttt").append("...");
 
-$("img").click(function () {
-  console.log("HALo");
-  var src = $(this).attr("src");
-  $(".modal").modal("show");
-  $("#popup-img").attr("src", src);
+$(document).ready(function () {
+  $("img").click(function () {
+    console.log("HALo");
+    var src = $(this).attr("src");
+    $(".modal").modal("show");
+    $("#popup-img").attr("src", src);
+  });
+});
+
+$(function () {
+  console.log("USLi");
+  if ($("textarea#ta").length) {
+    console.log("USLi");
+    CKEDITOR.replace("ta");
+  }
 });

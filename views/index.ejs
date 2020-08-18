@@ -41,7 +41,7 @@
                 <div class="blog-post">
 
                   <div class="down-content">
-                    <span>Preminuli</span>
+                    <span><%= novosti[i].category %></span>
                     <a href="post-details.html">
                       <h4><%= novosti[i].naslov %></h4>
                     </a>
@@ -53,8 +53,9 @@
                     <div class="blog-thumb">
 
                       <img src="<%= novosti[i].images %>" alt="">
-                      <p class="kratki-tekst">14. lipnja 2020.
-                        <%= novosti[i].description %>          </p>
+                      <p class="kratki-tekst" >       
+                        <%= novosti[i].description %> </p>
+                        <a href="/novosti/<%= novosti[i]._id%>">Opširnije</a>
                     </div>
 
                     <div class="post-options">
@@ -118,7 +119,7 @@
               <div class="col-lg-12">
                 <div class="sidebar-item categories">
                   <div class="sidebar-heading">
-                    <h2><i class="fa fa-square"></i> Kontakti</h2>
+                    <h2><i class="fa fa-phone"></i> Kontakti</h2>
                   </div>
                   <div class="content">
                     <p>Župni ured Srca Marijina - Skopaljska Gračanica</p>

@@ -3,7 +3,9 @@ const router = express.Router();
 
 const Novosti = require("../models/posts");
 
-router.get("/", (req, res) => {
+/* router.get("/", (req, res) => {
+  console.log(req.query.search);
+
   Novosti.find({}, (err, sveNovosti) => {
     if (err) console.log(err);
     else {
@@ -11,7 +13,7 @@ router.get("/", (req, res) => {
       res.render("blog", { novosti: sveNovosti });
     }
   });
-});
+}); */
 router.post("/", (req, res) => {
   console.log("Usli smo u post od novosit");
   const novost = new Novosti({
@@ -76,29 +78,33 @@ router.get("/:id", (req, res) => {
     }
   });
 });
+/*=================================================================== */
+router.get("/", (req, res) => {
+  console.log("USLI SMO U GET" + req.query.search);
 
-router.get("/", function (req, res) {
   var perPage = 6;
   var pageQuery = parseInt(req.query.page, 10);
   var pageNum = pageQuery && pageQuery >= 1 ? pageQuery : 1;
   var noMatch = false;
 
   if (req.query.search) {
-    Novosti.find({ kategorija: { $in: req.query.search } })
+    console.log("USLI SMO U GET IF --" + req.query.search);
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    Novosti.find({ naslov: regex })
       .skip((pageNum - 1) * perPage)
       .limit(perPage)
       .exec(function (err, artikl) {
         if (err || !artikl) {
           req.flash("error", "Something Went Wrong");
-          return res.redirect("/shop");
+          return res.redirect("/novosti");
         }
-        Novosti.find({ kategorija: { $in: req.query.search } })
+        Novosti.find({ naslov: regex })
           .count()
           .exec(function (err, count) {
             var totalPages = Math.ceil(count / perPage);
 
             if (pageNum < 1 || pageNum > totalPages) {
-              res.redirect("/shop");
+              res.redirect("/novosti");
             } else {
               res.render("blog", {
                 novosti: artikl,
@@ -111,27 +117,28 @@ router.get("/", function (req, res) {
           });
       });
   } else {
+    console.log("USLI SMO U GET ELSE  " + req.query.search);
     Novosti.find({})
       .skip((pageNum - 1) * perPage)
       .limit(perPage)
       .exec(function (err, artikl) {
         if (err || !artikl) {
           req.flash("error", "Something Went Wrong");
-          return res.redirect("/shop");
+          return res.redirect("/novosti");
         }
-        Artikl.count().exec(function (err, count) {
+        Novosti.count().exec(function (err, count) {
           var totalPages = Math.ceil(count / perPage);
 
           if (err) {
             req.flash("error", "Something Went Wrong");
-            res.redirect("/shop");
+            res.redirect("/novosti");
           } else if (pageNum < 1 || pageNum > totalPages) {
             //req.flash("error", "Page Index Out of Range"); //pado server zbog ovog :D
-            res.redirect("/shop");
+            res.redirect("/novosti");
           } else {
-            res.render("shop", {
-              artikl: artikl,
-              page: "shop",
+            res.render("blog", {
+              novosti: artikl,
+              page: "blog",
               search: false,
               current: pageNum,
               totalPages: totalPages,
@@ -142,7 +149,6 @@ router.get("/", function (req, res) {
   }
 });
 /*==================================================================*/
-
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
