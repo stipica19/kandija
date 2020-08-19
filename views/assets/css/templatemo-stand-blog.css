@@ -163,7 +163,6 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Header Style */
 header {
-	
 	position: absolute;
 	z-index: 99999;
 	width: 100%;
@@ -249,7 +248,7 @@ header .navbar {
 }
 .navbar .navbar-toggler {
 	border-color: #fff;
-	background-color: #f48840;	
+	background-color: #6e0000;	
 	height: 46px;
 	outline: none;
 	border-radius: 0px;
@@ -262,9 +261,8 @@ header .navbar {
 	color: #fff;
 	font-size: 18px;
 	line-height: 30px;
-	font-family: 'FontAwesome';
+	font-family:  'Montserrat',sans-serif;;
 }
-
 
 
 
@@ -325,8 +323,7 @@ header .navbar {
 }
 
 /*GALLLERY*/
-.container .gallery-container {
-	
+.container.gallery-container {
     background-color: #fff;
     color: #35373a;
     min-height: 100vh;
@@ -1109,6 +1106,7 @@ footer p a:hover {
 	    text-align: center;
 	    background-color: #fff;
 	    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+	}
 	.navbar .navbar-nav .nav-item {
 		border-bottom: 1px solid #eee;
 	}

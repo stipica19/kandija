@@ -112,7 +112,6 @@ $(document).ready(function () {
 });
 
 $(function () {
-  console.log("USLi");
   if ($("textarea#ta").length) {
     console.log("USLi");
     CKEDITOR.replace("ta");

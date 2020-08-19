@@ -125,7 +125,7 @@ router.get("/:groblje", (req, res) => {
 
 /*EDITOVANJE GROBLJA */
 /*EDITOVANJE GROBLJA */
-router.get("/:groblje/edit", isAdmin, (req, res) => {
+router.get("/:groblje/edit", (req, res) => {
   Groblje.findOne({ groblje: req.params.groblje }, (err, trazenoGroblje) => {
     if (err) {
       console.log("Greška u traženjuGROBLJA ZA UPDATE " + err);
@@ -136,7 +136,8 @@ router.get("/:groblje/edit", isAdmin, (req, res) => {
   });
 });
 
-router.post("/delete/:images", isAdmin, (req, res) => {
+router.post("/delete/:images", (req, res) => {
+  console.log("izbrisansssssssssssssssssssso");
   Groblje.findOneAndUpdate(
     { images: req.params.images },
     { $pull: { images: req.params.images } },
@@ -144,8 +145,9 @@ router.post("/delete/:images", isAdmin, (req, res) => {
     (err, node) => {
       if (err) {
         console.log(err);
+      } else {
+        console.log("Uspiješno izbrisana slika od groblja" + node.images);
       }
-      //console.log("Uspiješno izbrisana slika od groblja" + node.images);
     }
   );
 });
