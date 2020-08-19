@@ -6,7 +6,14 @@ const path = require("path");
 const Groblje = require("../models/groblja");
 
 router.use(express.static("views"));
-
+isAdmin = (req, res, next) => {
+  if (req.user == undefined) {
+    return res.redirect("/");
+  } else if (req.user.isAdmin == false) {
+    return res.redirect("/");
+  }
+  next();
+};
 //Set Storage Engine
 const storage = multer.diskStorage({
   destination: "./views/public/",
@@ -52,11 +59,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/add", (req, res) => {
+router.get("/add", isAdmin, (req, res) => {
   res.render("addGroblje");
 });
 
-router.post("/upload", (req, res) => {
+router.post("/upload", isAdmin, (req, res) => {
   console.log("USao u post");
   upload(req, res, (err) => {
     if (err) {
@@ -118,7 +125,7 @@ router.get("/:groblje", (req, res) => {
 
 /*EDITOVANJE GROBLJA */
 /*EDITOVANJE GROBLJA */
-router.get("/:groblje/edit", (req, res) => {
+router.get("/:groblje/edit", isAdmin, (req, res) => {
   Groblje.findOne({ groblje: req.params.groblje }, (err, trazenoGroblje) => {
     if (err) {
       console.log("Greška u traženjuGROBLJA ZA UPDATE " + err);
@@ -129,7 +136,7 @@ router.get("/:groblje/edit", (req, res) => {
   });
 });
 
-router.post("/delete/:images", (req, res) => {
+router.post("/delete/:images", isAdmin, (req, res) => {
   Groblje.findOneAndUpdate(
     { images: req.params.images },
     { $pull: { images: req.params.images } },
@@ -144,7 +151,7 @@ router.post("/delete/:images", (req, res) => {
 });
 
 /*AZURIRANJE GROBLJA JEDNOG */
-router.post("/:groblje", (req, res) => {
+router.post("/:groblje", isAdmin, (req, res) => {
   console.log("DOslo za update :  " + req.body.description);
   Groblje.findOneAndUpdate(
     { groblje: req.params.groblje },

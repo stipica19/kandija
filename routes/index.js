@@ -102,7 +102,7 @@ router.get("/", (req, res) => {
     }
   });
 });
-router.get("/admin", (req, res) => {
+router.get("/admin", isAdmin, (req, res) => {
   Novosti.find({}, (err, sveNovosti) => {
     if (err) console.log(err);
     else {
