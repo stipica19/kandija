@@ -3,18 +3,15 @@ const router = express.Router();
 
 const Novosti = require("../models/posts");
 
-/* router.get("/", (req, res) => {
-  console.log(req.query.search);
-
-  Novosti.find({}, (err, sveNovosti) => {
-    if (err) console.log(err);
-    else {
-      //console.log("PODACI" + sveNovosti);
-      res.render("blog", { novosti: sveNovosti });
-    }
-  });
-}); */
-router.post("/", (req, res) => {
+isAdmin = (req, res, next) => {
+  if (req.user == undefined) {
+    return res.redirect("/");
+  } else if (req.user.isAdmin == false) {
+    return res.redirect("/");
+  }
+  next();
+};
+router.post("/", isAdmin, (req, res) => {
   console.log("Usli smo u post od novosit");
   const novost = new Novosti({
     naslov: req.body.naslov,
@@ -35,7 +32,7 @@ router.post("/", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/:id/edit", (req, res) => {
+router.get("/:id/edit", isAdmin, (req, res) => {
   Novosti.findById(req.params.id, (err, trazenaNovost) => {
     if (err) {
       console.log("Greška u traženju NOVOSTI ZA UPDATE" + err);
@@ -57,7 +54,7 @@ router.post("/:id", (req, res) => {
   });
 });
 
-router.delete("/delete/:id", (req, res) => {
+router.delete("/delete/:id", isAdmin, (req, res) => {
   Novosti.findByIdAndRemove(req.params.id, (err, brisanaNovost) => {
     if (err) {
       console.log("Greška prilikom brisanja NOVOSTI" + err);

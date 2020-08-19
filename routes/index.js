@@ -70,7 +70,7 @@ router.post("/send", (req, res) => {
   });
 });
 
-router.get("/login", function (req, res) {
+router.get("/login", (req, res) => {
   if (req.user) {
     req.session = null;
     return res.redirect("/");
@@ -85,7 +85,7 @@ router.post(
     failureRedirect: "/login",
   })
 );
-router.get("/logout", function (req, res) {
+router.get("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
   res.redirect("/preminuli");
@@ -144,8 +144,7 @@ router.post(
     failureRedirect: "/login",
     failureFlash: true,
     successFlash: "Welcome to YelpCamp!",
-  }),
-  function (req, res) {}
+  })
 );
 
 // logout route
@@ -154,4 +153,13 @@ router.get("/logout", function (req, res) {
   req.flash("success", "See you later!");
   res.redirect("/");
 });
+
+isAdmin = (req, res, next) => {
+  if (req.user == undefined) {
+    return res.redirect("/");
+  } else if (req.user.isAdmin == false) {
+    return res.redirect("/");
+  }
+  next();
+};
 module.exports = router;
