@@ -1,20 +1,6 @@
 jQuery(document).ready(function ($) {
   "use strict";
 
-  // Page loading animation
-
-  /* $("#preloader").animate(
-    {
-      opacity: "0",
-    },
-    600,
-    function () {
-      setTimeout(function () {
-        $("#preloader").css("visibility", "hidden").fadeOut();
-      }, 300);
-    }
-  ); */
-
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     var box = $(".header-text").height();
@@ -26,81 +12,16 @@ jQuery(document).ready(function ($) {
       $("header").removeClass("background-header");
     }
   });
-
-  if ($(".owl-clients").length) {
-    $(".owl-clients").owlCarousel({
-      loop: true,
-      nav: false,
-      dots: true,
-      items: 1,
-      margin: 30,
-      autoplay: false,
-      smartSpeed: 700,
-      autoplayTimeout: 6000,
-      responsive: {
-        0: {
-          items: 1,
-          margin: 0,
-        },
-        460: {
-          items: 1,
-          margin: 0,
-        },
-        576: {
-          items: 3,
-          margin: 20,
-        },
-        992: {
-          items: 5,
-          margin: 30,
-        },
-      },
-    });
-  }
-
-  if ($(".owl-banner").length) {
-    $(".owl-banner").owlCarousel({
-      loop: true,
-      nav: true,
-      dots: true,
-      items: 3,
-      margin: 10,
-      autoplay: false,
-      smartSpeed: 700,
-      autoplayTimeout: 6000,
-      responsive: {
-        0: {
-          items: 1,
-          margin: 0,
-        },
-        460: {
-          items: 1,
-          margin: 0,
-        },
-        576: {
-          items: 1,
-          margin: 10,
-        },
-        992: {
-          items: 3,
-          margin: 10,
-        },
-      },
-    });
-  }
 });
 
 $(document).ready(function () {
   $(".kratki-tekst").each(function (f) {
-    var newstr = $(this).text().substring(0, 180);
+    var newstr = $(this).text().substring(27, 180);
     $(this).text(newstr);
+
     $(".kratki-tekst").append(".");
   });
 });
-
-var myDiv = $(".ttt");
-myDiv.text(myDiv.text().substring(0, 180));
-$(".ttt").append("...");
 
 $(document).ready(function () {
   $("img").click(function () {

@@ -1,11 +1,3 @@
-/* 
-
-TemplateMo 551 Stand Blog
-
-https://templatemo.com/tm-551-stand-blog
-
-*/
-
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
@@ -159,8 +151,6 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0;
   }
 }
-
-
 /* Header Style */
 header {
 	position: absolute;
@@ -181,7 +171,7 @@ header .navbar {
 }
 .background-header {
 	top: 0;
-	height: 80px;
+	height: 100px;
 	position: fixed;
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 }
@@ -218,6 +208,15 @@ header .navbar {
 	font-style: normal;
 	color: #6e0000;
 }
+header .navbar .navbar-brand img {
+width: 100px;
+height: 80px;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 #navbarResponsive {
 	z-index: 999;
 }
@@ -243,6 +242,11 @@ header .navbar {
 .navbar .navbar-nav .show>.nav-link {
 	color: #6e0000;
 }
+.navbar-nav li.active > a {
+
+	color: #6e0000;
+}
+ 
 .navbar .navbar-toggler-icon {
 	background-image: none;
 }
@@ -261,66 +265,16 @@ header .navbar {
 	color: #fff;
 	font-size: 18px;
 	line-height: 30px;
-	font-family:  'Montserrat',sans-serif;;
+	font-family: 'FontAwesome';
 }
 
 
-
-/* Banner Style */
-.main-banner .container-fluid {
-	padding: 0px 10px;
-	margin-bottom: -24px;
-}
-.owl-banner {
-	padding-top: 110px;
+@media(max-width: 768px) {
+    .navbar-brand img{
+		display: none;
+    }
 }
 
-.owl-banner .item {
-	position: relative;
-}
-
-.owl-banner .item .item-content {
-	position: absolute;
-	bottom: 40px;
-	left: 40px;
-}
-
-
-
-/* Call To Action */
-
-.call-to-action {
-	margin-top: 100px;
-}
-
-.call-to-action .main-content {
-	padding: 40px;
-	background-image: url(../images/cta-bg.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.call-to-action .main-content span {
-	color: #f48840;
-	font-size: 18px;
-	font-weight: 900;
-	letter-spacing: 0.5px;
-}
-
-.call-to-action .main-content h4 {
-	margin-bottom: 0px;
-	margin-top: 12px;
-	color: #fff;
-	font-size: 26px;
-	font-weight: 900;
-	letter-spacing: 0.25px;
-}
-
-.call-to-action .main-content .main-button {
-	text-align: right;
-	margin-top: 12px;
-}
 
 /*GALLLERY*/
 .container.gallery-container {
@@ -971,7 +925,7 @@ footer p a:hover {
 
 .contact-us .contact-form button {
 	display: inline-block;
-	background-color: #f48840;
+	background-color: #6e0000;
 	color: #fff;
 	font-size: 13px;
 	font-weight: 500;

@@ -3,6 +3,7 @@
      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 </script>
+<%- include ('partials/nav.ejs') %>
   <!-- Page Content -->
   <!-- Banner Starts Here -->
   <div class="heading-page header-text">
@@ -29,6 +30,7 @@
         <div class="col-lg-8">
           <div class="all-blog-posts">
             <div class="row">
+            
               <% novosti.forEach((novost)=>{%>
               <div class="col-lg-6">
                 <div class="blog-post">
@@ -42,19 +44,11 @@
                     </a>
                     <ul class="post-info">
                       <li>Admin</a></li>
-                      <li><%= novost.datum.toLocaleDateString('hr-EG',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></li>
+                      <li><%= novost.datum.toLocaleDateString() %></li>
                       
                     </ul>
-                    <p class="ttt" id="log" > 
-                      
-                     
-                      
-                          
-                       <%=  novost.description%> 
-                          
-                   
-                      
-                       </p><a href="/novosti/<%= novost._id%>">Opširnije</a>
+                    <p class="kratki-tekst" id="kkkk" >                        <%=  novost.description%> 
+                                                                 </p><a href="/novosti/<%= novost._id%>">Opširnije</a>
                     <div class="post-options">
                       <div class="row">
                         <div class="col-lg-12">
@@ -75,6 +69,7 @@
               <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hr_HR/sdk.js#xfbml=1&version=v8.0&appId=715696709360363&autoLogAppEvents=1" nonce="gz1hy9GG"></script>
               <% });%>
+             
               <div id="di"></div>
               
            
@@ -169,9 +164,7 @@
                     <ul>
                       <li><a href="/preminuli">- PREMINULI</a></li>
                       <li><a href="#">- ŽUPNE OBAVIJESTI</a></li>
-                      <li><a href="#">- PREMINULI</a></li>
-                      <li><a href="#">- PREMINULI</a></li>
-                      <li><a href="#">- ŽUPNE OBAVIJESTI</a></li>
+                      <li><a href="#">- OSTALO</a></li>
                       
                     </ul>
                   </div>
@@ -184,6 +177,28 @@
       </div>
     </div>
   </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="social-icons">
+            <li><a href="#">NASLOVNA</a></li>
+            <li><a href="#">O ŽUPI</a></li>
+            <li><a href="#">GROBLJA</a></li>
+            <li><a href="#">NOVOSTI</a></li>
+            <li><a href="#">KONTAKT</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright 2020 Župa Kandija. Sva prava pridržana
+              | POWERED BY: <a href="https://www.facebook.com/stipica19" target="_parent">Stipica</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
    
 //alert(myVar);

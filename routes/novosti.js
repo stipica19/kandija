@@ -123,7 +123,7 @@ router.get("/", (req, res) => {
           req.flash("error", "Something Went Wrong");
           return res.redirect("/novosti");
         }
-        Novosti.count().exec(function (err, count) {
+        Novosti.countDocuments().exec(function (err, count) {
           var totalPages = Math.ceil(count / perPage);
 
           if (err) {
@@ -131,7 +131,7 @@ router.get("/", (req, res) => {
             res.redirect("/novosti");
           } else if (pageNum < 1 || pageNum > totalPages) {
             //req.flash("error", "Page Index Out of Range"); //pado server zbog ovog :D
-            res.redirect("/novosti");
+            res.redirect("/");
           } else {
             res.render("blog", {
               novosti: artikl,

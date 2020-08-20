@@ -1,5 +1,7 @@
 <%- include ('partials/header.ejs') %>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
+<%- include ('partials/nav.ejs') %>
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="heading-page header-text">
@@ -34,9 +36,34 @@
             </div>    
         </div> 
         <h5><%= groblje.description%></h5>
-        <%});%>     
+        <%});%>   
+       
     </div>
-      
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#">NASLOVNA</a></li>
+              <li><a href="#">O ŽUPI</a></li>
+              <li><a href="#">GROBLJA</a></li>
+              <li><a href="#">NOVOSTI</a></li>
+              <li><a href="#">KONTAKT</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <p>Copyright 2020 Župa Kandija. Sva prava pridržana
+                | POWERED BY: <a href="https://www.facebook/stipica19" target="_parent">Stipica</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
 
-    
+    <script>
+      baguetteBox.run('.tz-gallery');
+  </script>
     <%- include ('partials/footer.ejs') %>
