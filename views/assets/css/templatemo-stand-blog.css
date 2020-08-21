@@ -271,7 +271,8 @@ height: 80px;
 
 @media(max-width: 768px) {
     .navbar-brand img{
-		display: none;
+		width: 20px;
+		height: 20px;
     }
 }
 
@@ -1048,7 +1049,7 @@ footer p a:hover {
 	.navbar .navbar-brand {
 		position: absolute;
 		left: 30px;
-		top: 25px;
+		top: 55px;
 	}
 	.background-header .navbar-brand,
 	.background-header .navbar-toggler {
