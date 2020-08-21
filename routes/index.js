@@ -81,7 +81,7 @@ router.post(
   "/login",
 
   passport.authenticate("local", {
-    successRedirect: "/novosti",
+    successRedirect: "/admin",
     failureRedirect: "/login",
   })
 );
