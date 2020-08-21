@@ -7,17 +7,7 @@
     <!-- Banner Starts Here  -->
  
       
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h2  style="color:#6e0000; padding: 30px;">PREMINULI</h2>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      
+       
    
     
     <!-- Banner Ends Here -->
@@ -25,14 +15,16 @@
     
 
 
-    <section class="gallery-block cards-gallery">
+    <section class="gallery-block cards-gallery margina">
       <div class="container">
-  
-        <div class="col-md-12 text-center">  <img src="../views/assets/images/kriz.svg" width="150px"/></div>  <center><h2 style="color:#6e0000; padding: 30px;">PREMINULI </h2></center>
+        <form action="/preminuli" method="GET" class="form-inline">
+          <input type="text" name="search" placeholder="Traži..">         
+           <input type="submit" onclick="myFunction()" value="Pretraži">
+        </form>
+        <div class="col-md-12 text-center">  <img src="../views/assets/images/kriz.svg" width="150px"/></div> 
+        <h2 style="color:#6e0000;" class="text-center margina2">PREMINULI </h2>
         <div class="sidebar-item search">
-          <form action="/preminuli" method="GET" class="form-inline">
-            <input type="text" name="search" placeholder="Traži..">                    <input type="submit" onclick="myFunction()" value="Pretraži">
-          </form>
+          
         </div>
        
       

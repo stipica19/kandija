@@ -277,6 +277,15 @@ height: 80px;
 
 
 /*GALLLERY*/
+.margina{
+	padding-top: 180px;
+
+}
+.margina2{
+	padding-bottom: 20px;
+}
+
+
 .container.gallery-container {
     background-color: #fff;
     color: #35373a;
@@ -974,7 +983,7 @@ footer p a:hover {
 /* About Us */
 
 .about-us {
-	margin-top: 100px;
+	
 	text-align: center;
 }
 
