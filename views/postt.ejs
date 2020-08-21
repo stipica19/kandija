@@ -43,7 +43,7 @@
       </div>
       <!-- /.row -->
       <div id="fb-root"></div>
-      <div class="fb-share-button" data-href="https://www.stipicklepic91.xyz/novosti/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stipicklepic91.xyz%2Fnovosti%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Podijeli</a></div></div>
+<div class="dugme"><a class="">Podijeli</a></div></div>
 </section>
 <footer>
   <div class="container">
@@ -77,6 +77,43 @@
  
 // Append the parsed HTML
    $log.append( html );
+</script>
+<script>
+ 
+    console.log("asf");
+    window.fbAsyncInit = function() {
+    FB.init({
+        appId            : '715696709360363',
+        status           : true,
+        cookie           : true,
+        version          : 'v2.10'                
+    });
+    
+    $( '.dugme' ).click(function(e){
+        e.preventDefault();
+        var image = $(this).siblings('img').attr('src');
+
+        FB.ui(
+                {
+                    method: 'share',
+                    href: $(location).attr('href') + '?og_img=' + image,
+                },
+                function (response) {
+
+                }
+            );
+    })
+};
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+ 
 </script>
  
 <%- include ('partials/footer.ejs') %>

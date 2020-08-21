@@ -137,15 +137,6 @@ router.post("/register", function (req, res) {
   });
 });
 //handling login logic
-router.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/admin",
-    failureRedirect: "/login",
-    failureFlash: true,
-    successFlash: "Welcome to YelpCamp!",
-  })
-);
 
 // logout route
 router.get("/logout", function (req, res) {
