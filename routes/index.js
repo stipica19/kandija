@@ -72,14 +72,15 @@ router.post("/send", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.user) {
+    //ako je logiran user redirektaj na '/'
     req.session = null;
+
     return res.redirect("/");
   }
   res.render("login");
 });
 router.post(
   "/login",
-
   passport.authenticate("local", {
     successRedirect: "/admin",
     failureRedirect: "/login",
