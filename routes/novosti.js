@@ -60,6 +60,7 @@ router.delete("/delete/:id", isAdmin, (req, res) => {
       console.log("Greška prilikom brisanja NOVOSTI" + err);
     } else {
       console.log("Uspiješno izbrisana novost" + brisanaNovost);
+      res.status(200).send(brisanaNovost);
     }
   });
 });

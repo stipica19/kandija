@@ -32,7 +32,11 @@
 
                 </div>
             </div>
+            <% if(currentUser){ %>
+              <a class="btn btn-primary" href="/groblja/<%= groblja.groblje %>/edit">UREDI</a>
+              <% } %>
           </div>
+         
           <%});%>
         </div>
       </div>
