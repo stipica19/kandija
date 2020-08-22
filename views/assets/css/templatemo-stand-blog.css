@@ -1044,6 +1044,10 @@ footer p a:hover {
 		display: none;
 	}
 }
+.pp{
+	float:left;
+	width: 100px;
+}
 
 @media (max-width: 992px) {
 	.navbar .navbar-brand {
