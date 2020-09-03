@@ -55,7 +55,8 @@
 
                       <img src="<%= novosti[i].images %>" alt="">
                       <p class="kratki-tekst" >       
-                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').substring(0,250) %> 
+                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').replace(/&quot;                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&nbsp;/g,' ').substring(0,250) %> 
+                        ;/g,'"').substring(0,250) %> 
                       </p>
                         <a href="/novosti/<%= novosti[i]._id%>">Opširnije</a>
                     </div>
