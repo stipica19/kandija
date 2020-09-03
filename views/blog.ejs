@@ -55,9 +55,9 @@
                       
                     </ul>
                     <p class="kratki-tekst2" id="kkkk" >          
-                      
-                      <%=  novost.description%> 
                     
+                    <%= novost.description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').substring(0,100)  %>
+                    ...
                     </p>
                     <a href="/novosti/<%= novost._id%>">Opširnije</a>
                     <div class="post-options">
@@ -210,9 +210,19 @@
       </div>
     </div>
   </footer>
-
-
   <script>
+ 
+    let text = document.getElementById('kkkk').textContent;
+    var $log = $( "#kkkk" );
+    console.log(text);
+     html = $.parseHTML( text ),
+   nodeNames = [];
+ 
+ // Append the parsed HTML
+    //$log.append( html );
+
+
+
    $("meta[property='og\\:title']").attr("content", "ccccc");
    $(document).ready(function () {
         $('.brisi').on('click', function (e) {

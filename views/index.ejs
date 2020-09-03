@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="text-content">
-              <h4>Sv. Ilija Prorok </h4>
+              <h4>ŽUPA SV. ILIJE PROROKA </h4>
               <h2>KANDIJA</h2>
             </div>
           </div>
@@ -55,7 +55,7 @@
 
                       <img src="<%= novosti[i].images %>" alt="">
                       <p class="kratki-tekst" >       
-                        <%= novosti[i].description %> 
+                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').substring(0,250) %> 
                       </p>
                         <a href="/novosti/<%= novosti[i]._id%>">Opširnije</a>
                     </div>
