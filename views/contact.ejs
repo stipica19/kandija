@@ -1,118 +1,151 @@
+<%- include ('partials/header.ejs') %>
 
-    <%- include ('partials/header.ejs') %>
+<!-- Page Content -->
+<!-- Banner Starts Here -->
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-   
-    
-    
-    
-    <!-- Banner Ends Here -->
+<!-- Banner Ends Here -->
 
-    <%- include ('partials/nav.ejs') %>
-    <section class="contact-us">
-      <div class="container">
-      
-        <div class="row">
-        
-          <div class="col-lg-12">
-            <div class="down-contact">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="sidebar-item contact-form">
-                    <div class="sidebar-heading">
-                      <h2>POŠALJITE PORUKU</h2>
-                    </div>
-                    <div class="content">
-                      <form id="contact" action="send" method="post">
-                        <div class="row">
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Vaše ime" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input name="email" type="text" id="email" placeholder="Vaš email" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-md-12 col-sm-12">
-                            <fieldset>
-                              <input name="subject" type="text" id="subject" placeholder="Predmet">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <textarea name="message" rows="6" id="message" placeholder="Vaša poruka" required=""></textarea>
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-button">POŠALJITE</button>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+<%- include ('partials/nav.ejs') %>
+<section class="contact-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="down-contact">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="sidebar-item contact-form">
+                <div class="sidebar-heading">
+                  <h2>POŠALJITE PORUKU</h2>
                 </div>
-                <div class="col-lg-4">
-                  <div class="sidebar-item contact-information">
-                    <div class="sidebar-heading">
-                      <h2>KONTAKT INFORMACIJE</h2>
+                <div class="content">
+                  <form id="contact" action="send" method="post">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <fieldset>
+                          <input
+                            name="name"
+                            type="text"
+                            id="name"
+                            placeholder="Vaše ime"
+                            required=""
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <fieldset>
+                          <input
+                            name="email"
+                            type="text"
+                            id="email"
+                            placeholder="Vaš email"
+                            required=""
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-12 col-sm-12">
+                        <fieldset>
+                          <input
+                            name="subject"
+                            type="text"
+                            id="subject"
+                            placeholder="Predmet"
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <textarea
+                            name="message"
+                            rows="6"
+                            id="message"
+                            placeholder="Vaša poruka"
+                            required=""
+                          ></textarea>
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <button
+                            type="submit"
+                            id="form-submit"
+                            class="main-button"
+                          >
+                            POŠALJITE
+                          </button>
+                        </fieldset>
+                      </div>
                     </div>
-                    <div class="content">
-                      <ul>
-                        <li>
-                          <h5>+387 63 245 252</h5>
-                          <span>TELEFON</span>
-                        </li>
-                        <li>
-                          <h5>zupa-kandija@cgmail.com</h5>
-                          <span>EMAIL ADRESA</span>
-                        </li>
-                        <li>
-                          <h5>KANDIJA BB, 
-                          	<br>BUGOJNO 70230</h5>
-                          <span>ADRESA</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="sidebar-item contact-information">
+                <div class="sidebar-heading">
+                  <h2>KONTAKT INFORMACIJE</h2>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li>
+                      <h5>+387 63 245 252</h5>
+                      <span>TELEFON</span>
+                    </li>
+                    <li>
+                      <h5>zupa-kandija@cgmail.com</h5>
+                      <span>EMAIL ADRESA</span>
+                    </li>
+                    <li>
+                      <h5>KANDIJA BB, <br />BUGOJNO 70230</h5>
+                      <span>ADRESA</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="col-lg-12">
-            <div id="map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.3926554842415!2d17.47919718603223!3d44.0344202018675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475fa73b70ae452d%3A0x97cea970b485a262!2sCrkva%20Kandija!5e1!3m2!1sen!2sba!4v1596485941904!5m2!1sen!2sba" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>            </div>
-          </div>
-          
         </div>
       </div>
-    </section>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="social-icons">
-              <li><a href="#">NASLOVNA</a></li>
-              <li><a href="#">O ŽUPI</a></li>
-              <li><a href="#">GROBLJA</a></li>
-              <li><a href="#">NOVOSTI</a></li>
-              <li><a href="#">KONTAKT</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright 2020 Župa Kandija. Sva prava pridržana
-                | POWERED BY: <a href="https://www.facebook/stipica19" target="_parent">Stipica</a></p>
-            </div>
-          </div>
+    </div>
+  </div>
+</section>
+<div class="col-md-12">
+  <div id="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.3926554842415!2d17.47919718603223!3d44.0344202018675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475fa73b70ae452d%3A0x97cea970b485a262!2sCrkva%20Kandija!5e1!3m2!1sen!2sba!4v1596485941904!5m2!1sen!2sba"
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border: 0"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0"
+    ></iframe>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="social-icons">
+          <li><a href="#">NASLOVNA</a></li>
+          <li><a href="#">O ŽUPI</a></li>
+          <li><a href="#">GROBLJA</a></li>
+          <li><a href="#">NOVOSTI</a></li>
+          <li><a href="#">KONTAKT</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-12">
+        <div class="copyright-text">
+          <p>
+            Copyright 2020 Župa Kandija. Sva prava pridržana | POWERED BY:
+            <a href="https://www.facebook/stipica19" target="_parent"
+              >Stipica</a
+            >
+          </p>
         </div>
       </div>
-    </footer>
-  
+    </div>
+  </div>
+</footer>
 
-    <%- include ('partials/footer.ejs') %>
+<%- include ('partials/footer.ejs') %>

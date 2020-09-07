@@ -915,6 +915,8 @@ footer p a:hover {
 .about-us img {
   width: 100%;
   overflow: hidden;
+  object-fit: contain;
+  height: 448px;
 }
 
 .about-us p {
