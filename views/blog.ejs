@@ -8,8 +8,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="text-content">
-              <h4>ŽUPA KANDIJA</h4>
-              <h2>NOVOSTI</h2>
+              <h4>ŽUPA SV. ILIJE PROROKA </h4>
+              <h2>KANDIJA</h2>
             </div>
           </div>
         </div>
@@ -43,8 +43,8 @@
                     </ul>
                     <p class="kratki-tekst2" id="kkkk" >          
                     
-                    <%= novost.description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').substring(0,100)  %>
-                    ...
+                    <%= novost.description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').substring(0,100)  %>...
+                  
                     </p>
                     <a href="/novosti/<%= novost._id%>">Opširnije</a>
                     <div class="post-options">
@@ -146,8 +146,8 @@
               <div class="col-lg-12">
                 <div class="sidebar-item search">
                   <form action="/novosti" method="GET" class="form-inline">
-                    <input type="text" name="search" placeholder="Traži..">  
-                    <input type="submit" onclick="myFunction()" value="Pretraži">
+                    <input type="text" name="search" style="font-family: FontAwesome;"  placeholder="&#xf002 Traži...">  
+                    <input type="submit"  value="Pretraži">
                   </form>
                 </div>
               </div>
@@ -202,13 +202,9 @@
     console.log(text);
      html = $.parseHTML( text ),
    nodeNames = [];
- 
- // Append the parsed HTML
-    //$log.append( html );
 
 
 
-   $("meta[property='og\\:title']").attr("content", "ccccc");
    $(document).ready(function () {
         $('.brisi').on('click', function (e) {
             e.preventDefault();
@@ -229,49 +225,7 @@
         });
 
     });
-//alert(myVar);
 
-
-// Append the parsed HTML
-
-    /* $(document).ready(function () {
-        load_data();
-        function load_data(query) {
-            $.ajax({
-                url: "/novosti",
-                method: "GET",
-                data: { query: query },
-                success: function (data) {
-                    $("#di").empty();
-                    data.forEach(function (item) {
-                        $("#di").append(`${item.naslov}`);
-                    });
-                }
-            });
-        }
-
-        $('#search_text').keyup(function () {
-            var search = $(this).val();
-            if (search != '') {
-                load_data(search);
-            }
-            else {
-                $.ajax({
-                    type: 'GET',
-                    url: '/novosti/',
-                    success: (response) => {
-                        window.location = "/novosti"
-                    },
-                    error: (e) => {
-                        alert('error!')
-                    }
-
-                });
-            }
-        });
-    });
- */
-    
     
     </script>
 

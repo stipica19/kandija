@@ -59,7 +59,7 @@
 
                       <img src="<%= novosti[i].images %>" alt="">
                       <p class="kratki-tekst" >       
-                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&scaron;/g,'š').replace(/&ldquo;/g,' ').replace(/&bdquo;/g,' ').substring(0,250) %> 
+                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&scaron;/g,'š').replace(/&ldquo;/g,' ').replace(/&bdquo;/g,' ').substring(0,250) %>... 
                       </p>
                         <a href="/novosti/<%= novosti[i]._id%>">Opširnije</a>
                     </div>
@@ -99,8 +99,9 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="sidebar-item search">
-                  <form id="search_form" name="gs" method="GET" action="#">
-                    <input type="text" name="q" class="searchText"  style="font-family: FontAwesome;"  placeholder="&#xf002 Traži..." autocomplete="on">
+                  <form action="/novosti" method="GET" class="form-inline">
+                    <input type="text"  name="search"  style="font-family: FontAwesome;"  placeholder="&#xf002 Traži..." > 
+                    <input type="submit" value="Pretraži">
                   </form>
                 </div>
               </div>
@@ -111,7 +112,7 @@
                   </div>
                   <div class="content">
                     <ul>
-                      <li><a href="post-details.html">
+                      <li><a href="/">
                           <p>NEDELJA </p>
                           <p>9:00 i 11:00 sati</p>
                           <p>Radnim Danima</p>
@@ -144,7 +145,7 @@
             <div class="col-lg-12">
               <div class="sidebar-item tags">
                 <div class="sidebar-heading">
-                  <h2>POSJETITE I</h2>
+                  <h2>Preporučena web mjesta</h2>
                 </div>
                 <div class="content">
                   <div class="posjetite" style="padding-top: 5px;"> <a href="https://www.nedjelja.ba/"><img
