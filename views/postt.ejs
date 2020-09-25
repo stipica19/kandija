@@ -2,7 +2,7 @@
  
 
     <meta property="og:title" content="<%- novost.naslov%>">
-<meta property="og:description" content="<%= novost.description%>">
+<meta property="og:description" content="<%= novost.description%>.replace(/(<([^>]+)>)/ig,'')">
 <meta property="og:image" content="<%= novost.images %>">
 <meta property="og:url" content="https://www.stipicklepic91.xyz/novosti/<%= novost._id %>">
 <%- include ('partials/header.ejs') %>
