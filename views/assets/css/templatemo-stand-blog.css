@@ -970,8 +970,9 @@ footer p a:hover {
   }
   .background-header .navbar-brand,
   .background-header .navbar-toggler {
-    top: 15px;
+    top: 20px;
   }
+
   .background-header-logo .navbar-brand {
     position: absolute;
     left: 30px;
