@@ -108,7 +108,7 @@ header .navbar {
   padding: 25px 0px;
 }
 .background-header .navbar {
-  padding: 17px 0px;
+  padding: 28px 0px;
 }
 .background-header {
   top: 0;
@@ -212,6 +212,11 @@ header .navbar .navbar-brand img {
   .navbar-brand img {
     width: 20px;
     height: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 }
 
@@ -966,6 +971,11 @@ footer p a:hover {
   .background-header .navbar-brand,
   .background-header .navbar-toggler {
     top: 15px;
+  }
+  .background-header-logo .navbar-brand {
+    position: absolute;
+    left: 30px;
+    top: 55px;
   }
   .navbar .navbar-brand {
     width: auto;

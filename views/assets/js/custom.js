@@ -8,8 +8,10 @@ jQuery(document).ready(function ($) {
 
     if (scroll >= box - header) {
       $("header").addClass("background-header");
+      $("header").addClass("background-header-logo");
     } else {
       $("header").removeClass("background-header");
+      $("header").removeClass("background-header-logo");
     }
   });
 });
