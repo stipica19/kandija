@@ -10,6 +10,7 @@ const User = require("../models/user");
 const Novosti = require("../models/posts");
 require("dotenv").config();
 let password = process.env.PASSW;
+console.log(password);
 
 router.get("/ozupi", (req, res) => {
   console.log("DOBRO DOSLI");
