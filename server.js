@@ -27,6 +27,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
 
 const uri = `mongodb+srv://stipica97:<stipica1910>@cluster0.irnfl.mongodb.net/<zupa>?retryWrites=true&w=majority`;
 // connects mongoose to the uri and sets some mongoose keys to true to combat mongoose's deprecation warnings
