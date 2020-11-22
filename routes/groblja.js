@@ -26,7 +26,7 @@ var storage = multer.diskStorage({
 // INIT Upload
 
 var upload = multer({ storage: storage, limits: { fieldSize: 100000 } }).single(
-  "file"
+  "images"
 );
 
 router.get("/", (req, res) => {
