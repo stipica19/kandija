@@ -25,7 +25,9 @@ var storage = multer.diskStorage({
 });
 // INIT Upload
 
-var upload = multer({ storage: storage }).single("file");
+var upload = multer({ storage: storage, limits: { fieldSize: 100000 } }).single(
+  "file"
+);
 
 router.get("/", (req, res) => {
   Groblje.find({}, (err, groblja) => {
@@ -46,7 +48,7 @@ router.post("/upload", isAdmin, (req, res) => {
   console.log("USao u post");
   upload(req, res, (err) => {
     if (err) {
-      res.render("addGroblja", { msg: err });
+      console.log(err);
     } else {
       if (req.file == undefined) {
         res.render("addGroblje", {
