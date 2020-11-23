@@ -43,7 +43,7 @@
                     </ul>
                     <p class="kratki-tekst2" id="kkkk" >          
                     
-                    <%= novost.description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').substring(0,100)  %>...
+                    <%= novost.description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,'').replace(/&scaron;/g,'š').replace(/&Scaron;/g,'Š').substring(0,100)  %>...
                   
                     </p>
                     <a href="/novosti/<%= novost._id%>">Opširnije</a>
