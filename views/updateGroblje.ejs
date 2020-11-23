@@ -77,42 +77,35 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="text-content">
-                <h2>GROBLJA</h2>
-
+                <h2>GROBLJE</h2>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
-    <!-- Banner Ends Here -->
-
-
-
-
-      <div class="container gallery-container">
+     <div class="container gallery-container">
 
         <h1><%= groblje.groblje%></h1>
-
             <div class="row">
                             <% for(var i=0 ; i < groblje.images.length; i++)  {%>
-             
-                <div class="box">
-                 
+                <div class="box"> 
                     <button type="submit" class="brisi delete"  value="<%=groblje.images[i] %>">
                     <span>&times;</span>
                 </button>
                   <div class="image">
-                      <img  src="/views/public/<%= groblje.images[i]%>" />
+                      <img  src="/public/<%= groblje.images[i]%>" />
                   </div>
               </div>
                 <%}%>   
             </div>    
 
         <div class="form-group">
-          <textarea class="form-control" name="description" rows="10" cols="50" placeholder="Tekst..." ><%= groblje.description %></textarea>
+          <textarea class="form-control" id="description" name="description" rows="10" cols="50" placeholder="Tekst..." ><%= groblje.description %></textarea>
         </div>
+        <div class="form-group ">
+          <button class="btn btn-spremi btn-primary btn-block"> SPREMI </button>
+</div>
 
     </div>
     <script>
@@ -123,20 +116,43 @@
              var id = $(this).val();
              console.log("ID: " + id);
              $.ajax({
-               
                  type: 'POST',
                  url:'/groblja/delete/' + id,
-                 success: (response) => {
-                     window.location = "/"
-                 },
-                 error: (e) => {
-                     alert('error!')
-                 }
- 
-             });
+               
+             }).done(function(res) {
+            if (res.success) {
+            console.log('id from ajax call is', res);
+            window.location.reload();
+        } else {
+            console.log('error...ajax');
+            };
          });
  
      });
+     });
+
+     $(document).ready(function () {
+        $('.btn-spremi').on('click', function (e) {
+            e.preventDefault();
+            var  txt = $("#description").val(); 
+            var data = {};
+            data.description=txt;
+           
+            $.ajax({
+                type: 'POST',
+                url: '/groblja/KANDIJA',
+                data: JSON.stringify(data),
+				        contentType: 'application/json',
+            }).done(function(res) {
+            if (res.success) {
+            console.log('id from ajax call is', res);
+            window.location.reload();
+        } else {
+            console.log('error...ajax');
+            };
+         });;
+        });
+    });
  </script>
 
    

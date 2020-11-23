@@ -92,9 +92,7 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/preminuli");
 });
-router.get("/add", (req, res) => {
-  res.render("addPost");
-});
+
 router.get("/", (req, res) => {
   Novosti.find({}, (err, sveNovosti) => {
     if (err) console.log(err);

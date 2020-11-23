@@ -11,6 +11,9 @@ isAdmin = (req, res, next) => {
   }
   next();
 };
+router.get("/add", isAdmin, (req, res) => {
+  res.render("addPost");
+});
 router.post("/", isAdmin, (req, res) => {
   console.log("Usli smo u post od novosit");
   const novost = new Novosti({
@@ -42,7 +45,7 @@ router.get("/:id/edit", isAdmin, (req, res) => {
   });
 });
 
-router.post("/:id", (req, res) => {
+router.post("/:id", isAdmin, (req, res) => {
   Novosti.findByIdAndUpdate(req.params.id, req.body, (err, updateNovost) => {
     if (err) {
       console.log("GREŠKAA KOD POST ZAHTJEVA ZA UPDATE" + err);

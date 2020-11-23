@@ -72,6 +72,7 @@ router.post("/upload", isAdmin, (req, res) => {
                   console.log(err);
                 } else {
                   console.log("fafaf " + groblje.images);
+                  res.redirect(`/groblja/${req.body.groblje}`);
                 }
               }
             );
@@ -81,6 +82,7 @@ router.post("/upload", isAdmin, (req, res) => {
               .save()
               .then((res) => {
                 console.log(`Uspjesno spremljeno groblje  ${req.body.groblje}`);
+                res.redirect(`/groblja/${req.body.groblje}`);
               })
               .catch((err) => {
                 console.log(err);
@@ -105,7 +107,6 @@ router.get("/:groblje", (req, res) => {
 });
 
 /*EDITOVANJE GROBLJA */
-/*EDITOVANJE GROBLJA */
 router.get("/:groblje/edit", (req, res) => {
   Groblje.findOne({ groblje: req.params.groblje }, (err, trazenoGroblje) => {
     if (err) {
@@ -115,6 +116,9 @@ router.get("/:groblje/edit", (req, res) => {
       res.render("updateGroblje", { groblje: trazenoGroblje });
     }
   });
+});
+router.post("/:groblje/edit", (req, res) => {
+  console.log("POST ZA EDIT GROBLJA");
 });
 
 router.post("/delete/:images", (req, res) => {
@@ -128,6 +132,7 @@ router.post("/delete/:images", (req, res) => {
         console.log(err);
       } else {
         console.log("Uspiješno izbrisana slika od groblja" + node.images);
+        res.json({ success: true });
       }
     }
   );
@@ -144,6 +149,7 @@ router.post("/:groblje", isAdmin, (req, res) => {
       if (err) {
         console.log(err);
       } else {
+        return res.json({ success: true });
         console.log("USPJESNO AZURIRANJA GROBLJA" + azuriranoGroblje);
       }
       res.redirect("/groblja/" + req.params.groblje);
