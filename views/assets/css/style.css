@@ -217,7 +217,7 @@ header .navbar .navbar-brand img {
     margin: 0;
     position: absolute;
     top: 50%;
-    left: -60px;
+    left: -20px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
