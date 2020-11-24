@@ -212,8 +212,8 @@ header .navbar .navbar-brand img {
 
 @media (max-width: 768px) {
   .navbar-brand img {
-    width: 70px;
-    height: 50px;
+    width: 90px;
+    height: 70px;
     margin: 0;
     position: absolute;
     top: 50%;
