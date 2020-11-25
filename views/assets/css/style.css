@@ -185,8 +185,11 @@ header .navbar .navbar-brand img {
 .navbar .navbar-nav .show > .nav-link {
   color: #6e0000;
 }
-.navbar-nav li.active > a {
+.nav-item.active {
   color: #6e0000;
+}
+.active {
+  color: yellow;
 }
 
 .navbar .navbar-toggler-icon {
@@ -246,6 +249,13 @@ header .navbar .navbar-brand img {
   font-weight: bold;
 }
 
+.gallery-block .post-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery-block .post-info .visit {
+  padding-left: 20px;
+}
 .gallery-container p .page-description p {
   text-align: center;
   max-width: 800px;
@@ -367,7 +377,7 @@ header .navbar .navbar-brand img {
 }
 
 .blog-posts .blog-thumb img {
-  width: 40%;
+  width: 100%;
   overflow: hidden;
   float: left;
   margin-right: 10px;

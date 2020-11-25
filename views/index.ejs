@@ -52,15 +52,14 @@ nonce="9xdNdlpI"></script>
                       <h4><%= novosti[i].naslov %></h4>
                     </a>
                     <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
+                      <!--*<li><a href="#">Admin</a></li>-->
                       <li><a href="#"> <%= novosti[i].datum.toLocaleDateString() %></a></li>
-                      <li><a href="#">12 Pregleda</a></li>
+                      <li><a href="#">Posjeta : <%= novosti[i].visit %></a></li>
                     </ul>
                     <div class="blog-thumb">
-                      <p class="kratki-tekst" >  
                       <img src="<%= novosti[i].images %>" alt="">
-                           
-                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&quot;/g,'"').replace(/&scaron;/g,'š').replace(/&Scaron;/g,'Š').replace(/&ldquo;/g,' ').replace(/&bdquo;/g,' ').substring(0,550) %>... 
+                      <p class="kratki-tekst" >       
+                        <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&quot;/g,'"').replace(/&scaron;/g,'š').replace(/&Scaron;/g,'Š').replace(/&ldquo;/g,' ').replace(/&bdquo;/g,' ').substring(0,300) %>... 
                       </p>
                         <a href="/novosti/<%= novosti[i]._id%>">Opširnije</a>
                     </div>

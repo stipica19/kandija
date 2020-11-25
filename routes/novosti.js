@@ -11,6 +11,17 @@ isAdmin = (req, res, next) => {
   }
   next();
 };
+
+siteViewsUp = (id) => {
+  Novosti.findByIdAndUpdate({ _id: id }, { $inc: { visit: 1 } }, { new: true })
+    .then((data) => {
+      console.log(data.visit);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 router.get("/add", isAdmin, (req, res) => {
   res.render("addPost");
 });
@@ -71,6 +82,8 @@ router.delete("/delete/:id", isAdmin, (req, res) => {
 /*POJEDINACNI POST */
 
 router.get("/:id", (req, res) => {
+  siteViewsUp(req.params.id);
+
   Novosti.findById(req.params.id, (err, novost) => {
     if (err) {
       console.log(err);

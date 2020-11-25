@@ -6,5 +6,6 @@ const PostSchema = mongoose.Schema({
   description: String,
   category: String,
   datum: Date,
+  visit: Number,
 });
 module.exports = mongoose.model("Post", PostSchema);

@@ -1,6 +1,14 @@
 jQuery(document).ready(function ($) {
   "use strict";
 
+  $(".navbar-nav .nav-item").on("click", function () {
+    console.log("clclclc");
+
+    $(this).addClass("active").siblings().removeClass("active");
+
+    //
+  });
+
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     var box = $(".header-text").height();
