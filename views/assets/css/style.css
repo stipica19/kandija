@@ -367,7 +367,7 @@ header .navbar .navbar-brand img {
 }
 
 .blog-posts .blog-thumb img {
-  width: 100%;
+  width: 40%;
   overflow: hidden;
   float: left;
   margin-right: 10px;
