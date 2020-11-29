@@ -9,8 +9,6 @@ const crypto = require("crypto");
 const User = require("../models/user");
 const Novosti = require("../models/posts");
 require("dotenv").config();
-let password = process.env.PASSW;
-console.log(password);
 
 router.get("/ozupi", (req, res) => {
   console.log("DOBRO DOSLI");
@@ -42,8 +40,8 @@ router.post("/send", (req, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "pipiklepic1@gmail.com", // generated ethereal user
-      pass: password, // generated ethereal password
+      user: "ljubaklepic0@gmail.com", // generated ethereal user
+      pass: process.env.PASSW, // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false,
@@ -52,8 +50,8 @@ router.post("/send", (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: "pipiklepic1@gmail.com", // sender address
-    to: "pipiklepic1@gmail.com", // list of receivers
+    from: "ljubaklepic0@gmail.com", // sender address
+    to: "ljubaklepic0@gmail.com", // list of receivers
     subject: "Node Contact Request", // Subject line
     text: "Hello world?", // plain text body
     html: output, // html body
