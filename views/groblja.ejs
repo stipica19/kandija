@@ -3,7 +3,7 @@
 <!-- Banner Ends Here -->
 <section class="gallery-block cards-gallery margina">
   <div class="container">
-    <h2 style="color: #6e0000" class="text-center margina2">GROBLJA</h2>
+    <h2 style="color: #6e0000" class="text-center margina2"></h2>
 
     <div class="row">
       <% groblja.forEach((groblja)=>{%>
@@ -14,12 +14,12 @@
             <img src="../public/<%= groblja.images[0]%>" class="card-img-top" />
           </a>
           <%}%>
-          <div class="card-body">
-            <h6>
+          <div class="card-body card-bodyy">
+            <h5>
               <a href="/groblja/<%= groblja.groblje %>"
                 ><%= groblja.groblje %></a
               >
-            </h6>
+            </h5>
             <p class="text-muted card-text"></p>
           </div>
         </div>
