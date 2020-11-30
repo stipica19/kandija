@@ -9,52 +9,67 @@
 
 <url>
   <loc>https://www.zupa-kandija.com/</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/novosti</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/ozupi</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/preminuli</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/groblja/</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/contact</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.zupa-kandija.com/novosti/5fc52d9cc3b66bd3f65f4398</loc>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.zupa-kandija.com/novosti/5fbed8a2c289e3ac453c5644</loc>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/novosti/5fb811d77965686229ca6057</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/novosti/5fb811a07965686229ca6056</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/novosti/5fb811757965686229ca6055</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.zupa-kandija.com/novosti/5fb810f17965686229ca6054</loc>
-  <lastmod>2020-11-22T13:49:02+00:00</lastmod>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.zupa-kandija.com/groblja/KANDIJA</loc>
+  <lastmod>2020-11-30T19:25:45+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
