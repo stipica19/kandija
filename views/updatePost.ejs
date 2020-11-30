@@ -1,6 +1,7 @@
 
 <%- include ('partials/header.ejs') %>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 </script>
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
@@ -43,7 +44,7 @@
     </select>
     
     <div class="form-group">
-      <textarea class="form-control" name="description" rows="10" cols="50" placeholder="Tekst..." ><%= novost.description %></textarea>
+      <textarea class="form-control" name="description" id="ta" rows="10" cols="50" placeholder="Tekst..." ><%= novost.description %></textarea>
     </div>
     
     <div class="form-group">
@@ -55,4 +56,10 @@
 
 </div>
 </div>
+<script>$(function () {
+  if ($("textarea#ta").length) {
+    console.log("USLi");
+    CKEDITOR.replace("ta");
+  }
+});</script>
 

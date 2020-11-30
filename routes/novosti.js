@@ -46,7 +46,7 @@ router.post("/", isAdmin, (req, res) => {
   res.redirect("/");
 });
 
-router.get("/:id/edit", isAdmin, (req, res) => {
+router.get("/edit/:id", isAdmin, (req, res) => {
   Novosti.findById(req.params.id, (err, trazenaNovost) => {
     if (err) {
       console.log("Greška u traženju NOVOSTI ZA UPDATE" + err);
