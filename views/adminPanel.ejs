@@ -42,6 +42,7 @@
           <thead>
             <tr>
               <th scope="col">Naslov</th>
+              <th scope="col">BROJ POSJETA</th>
               <th scope="col">Kategorija</th>
               <th scope="col">UREDI</th>
               <th scope="col">BRIŠI</th>
@@ -51,6 +52,7 @@
             <% novosti.forEach((novost)=>{%>
             <tr>
               <th scope="row"><%= novost.naslov%></th>
+              <th scope="row"><%= novost.visit%></th>
               <td><%= novost.category %></td>
               <td>
                 <a

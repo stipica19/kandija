@@ -1,5 +1,3 @@
-//kontakti forma za slanje emaila
-//pocetna
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
@@ -110,12 +108,12 @@ router.get("/admin", isAdmin, (req, res) => {
 });
 
 // show register form
-router.get("/register", function (req, res) {
+/* router.get("/register",  function (req, res) {
   res.render("register", { page: "register" });
 });
 
 //handle sign up logic
-router.post("/register", function (req, res) {
+router.post("/register", isAdmin, function (req, res) {
   var newUser = new User({ username: req.body.username });
   if (req.body.adminCode === process.env.secretCode) {
     newUser.isAdmin = true;
@@ -133,7 +131,7 @@ router.post("/register", function (req, res) {
       res.redirect("/");
     });
   });
-});
+}); */
 //handling login logic
 
 // logout route
