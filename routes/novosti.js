@@ -133,6 +133,7 @@ router.get("/", (req, res) => {
   } else {
     console.log("USLI SMO U GET ELSE  " + req.query.search);
     Novosti.find({})
+      .sort("-datum")
       .skip((pageNum - 1) * perPage)
       .limit(perPage)
       .exec(function (err, artikl) {
@@ -150,6 +151,7 @@ router.get("/", (req, res) => {
             //req.flash("error", "Page Index Out of Range"); //pado server zbog ovog :D
             res.redirect("/");
           } else {
+            console.log(artikl);
             res.render("blog", {
               novosti: artikl,
               page: "blog",

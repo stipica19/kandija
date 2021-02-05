@@ -51,11 +51,11 @@ h6 {
 
 .page-heading {
   margin: 0px 10px;
-  padding: 150px 0px;
+  padding: 180px 0px;
   text-align: left;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 80% 100%;
+  background-size: 100% 100%;
 
   background-image: url(../images/cover.png);
 }
@@ -1061,4 +1061,30 @@ footer p a:hover {
     margin-left: 0px;
     margin-top: 60px;
   }
+}
+.slika-post {
+  display: inline !important;
+}
+.slika-post img {
+  display: inline !important;
+}
+element.style {
+  display: inline !important;
+  height: 200px;
+  width: 200px;
+}
+
+@media (max-width: 468px) {
+  .slika-post p {
+    display: inline !important;
+    color: red;
+  }
+  .slika-post img {
+    height: 200px;
+    width: 200px;
+  }
+}
+.smanji {
+  width: 222px;
+  height: 222px;
 }
