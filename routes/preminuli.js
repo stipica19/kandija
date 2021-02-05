@@ -23,6 +23,7 @@ router.get("/", (req, res) => {
     console.log("USLI SMO U GET IF --" + req.query.search);
     const regex = new RegExp(escapeRegex(req.query.search), "gi");
     Novosti.find({ naslov: regex, category: "Preminuli" })
+      .sort({ datum: -1 })
       .skip((pageNum - 1) * perPage)
       .limit(perPage)
       .exec(function (err, artikl) {
@@ -52,6 +53,7 @@ router.get("/", (req, res) => {
   } else {
     console.log("USLI SMO U GET ELSE  " + req.query.search);
     Novosti.find({ category: "Preminuli" })
+      .sort({ datum: -1 })
       .skip((pageNum - 1) * perPage)
       .limit(perPage)
       .exec(function (err, artikl) {

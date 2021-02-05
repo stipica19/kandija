@@ -18,26 +18,26 @@
     <div class="col-md-12 text-center">
       <img src="../views/assets/images/kriz.svg" width="150px" />
     </div>
-    <h2 style="color: #6e0000" class="text-center margina2">PREMINULI</h2>
+    <h2 style="color: #6e0000; padding-bottom:50px" class="text-center margina2">PREMINULI</h2>
     <div class="sidebar-item search"></div>
 
     <div class="row display-flex">
-      <% preminuli.reverse().forEach((preminuli)=>{ %>
+      <% preminuli.forEach((preminuli)=>{ %>
       <div class="col-md-6 col-lg-6">
         <div class="card border-0 transform-on-hover">
           <div class="col-md-12">
             <img
-              src="<%= preminuli.images %>"
+              src="../public/<%= preminuli.images %>"
               class="card-img-top img-fluid popup"
             />
           </div>
 
           <div class="card-body">
-            <h6>
+            <h5>
               <i style="font-size: 24px" class="fas">&#xf654;</i> <%=
               preminuli.naslov%><br /><%= preminuli.datum.toLocaleDateString()
               %>
-            </h6>
+            </h5>
             <p class="text-muted card-text"></p>
           </div>
         </div>

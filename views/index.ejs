@@ -43,7 +43,7 @@
                       <li><a href="#">Posjeta : <%= novosti[i].visit %></a></li>
                     </ul>
                     <div class="blog-thumb">
-                      <img src="<%= novosti[i].images %>" alt="zupa-kandija">
+                      <img src="../public/<%= novosti[i].images %>" alt="zupa-kandija">
                       <p class="kratki-tekst" >       
                         <%= novosti[i].description.replace(/(<([^>]+)>)/ig,'').replace(/&nbsp;/g,' ').replace(/&quot;/g,'"').replace(/&scaron;/g,'š').replace(/&Scaron;/g,'Š').replace(/&ldquo;/g,' ').replace(/&bdquo;/g,' ').substring(0,300) %>... 
                       </p>

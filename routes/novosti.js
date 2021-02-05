@@ -1,4 +1,5 @@
 const express = require("express");
+const multer = require("multer");
 const router = express.Router();
 
 const Novosti = require("../models/posts");
@@ -22,28 +23,55 @@ siteViewsUp = (id) => {
     });
 };
 
+//Set Storage Engine
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./public");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+// INIT Upload
+
+var upload = multer({ storage: storage, limits: { fieldSize: 100000 } }).single(
+  "images"
+);
+
 router.get("/add", isAdmin, (req, res) => {
   res.render("addPost");
 });
 router.post("/", isAdmin, (req, res) => {
   console.log("Usli smo u post od novosit");
-  const novost = new Novosti({
-    naslov: req.body.naslov,
-    images: req.body.images,
-    description: req.body.description,
-    category: req.body.category,
-    datum: new Date(),
-  });
-
-  novost
-    .save()
-    .then((res) => {
-      console.log("Uspijesno smo spremili novost u bazu" + res);
-    })
-    .catch((err) => {
+  upload(req, res, (err) => {
+    if (err) {
       console.log(err);
-    });
-  res.redirect("/");
+    } else {
+      if (req.file == undefined) {
+        console.log("greska");
+        res.render("addPost", {
+          msg: "Error: No File Selected!",
+        });
+      } else {
+        console.log(req.file);
+        const novost = new Novosti({
+          naslov: req.body.naslov,
+          images: req.file.filename,
+          description: req.body.description,
+          category: req.body.category,
+          datum: new Date(),
+        });
+        novost
+          .save()
+          .then((res) => {
+            console.log("Uspijesno smo spremili novost u bazu" + res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    }
+  });
 });
 
 router.get("/edit/:id", isAdmin, (req, res) => {
