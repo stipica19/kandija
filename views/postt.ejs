@@ -52,7 +52,7 @@
         <hr>
 <div class="col-md-12 clearfix" >
   <img class="img-fluid  align-self-center float-left pull-left mr-2" width="500px" height="500px" src="../public/<%= novost.images%>" alt="zupa kandija">
-<p id="log" class="slika-post" >
+<p id="log" class="slika-post img-fluid float-left pull-left " >
   
 
 </p>
@@ -87,7 +87,7 @@
       </div>
       <div class="col-lg-12">
         <div class="copyright-text">
-          <p>Copyright 2020 Župa Kandija. Sva prava pridržana | Development by: <a href="https://www.linkedin.com/in/stipica-klepic-27454115b/" target="_parent">Stipica</a></p>
+          <p>Copyright 2021 Župa Kandija. Sva prava pridržana | Development by: <a href="https://www.linkedin.com/in/stipica-klepic-27454115b/" target="_parent">Stipica</a></p>
         </div>
       </div>
     </div>
@@ -112,17 +112,15 @@
 
    $('img').unwrap("p");
 
+
    function myFunction(x) {
    if (x.matches) { 
-    
     var element = document.getElementsByTagName("img");
   
     for(var i = 2 ; i<element.length;i++){
       element[i].style.width="300px"
       element[i].style.height="auto"
-    }
-
-    } 
+    }    } 
 }
 
     var x = window.matchMedia("(max-width: 400px)")

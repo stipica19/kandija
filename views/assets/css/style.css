@@ -1077,7 +1077,7 @@ element.style {
 @media (max-width: 468px) {
   .slika-post p {
     display: inline !important;
-    color: red;
+    color: #7a7a7a;
   }
   .slika-post img {
     height: 200px;
