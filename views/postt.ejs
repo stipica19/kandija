@@ -113,10 +113,15 @@
    $('img').unwrap("p");
 
    var el = document.getElementsByTagName("img");
-   //   mr-2
-   el[3].classList.add("img-fluid");
-   el[3].classList.add("float-left");
-   el[3].classList.add("pull-left");
+    
+  for(var i=2;i<el.length;i++){
+   el[i].classList.add("img-fluid");
+   el[i].classList.add("float-left");
+   el[i].classList.add("pull-left");
+   el[i].classList.add("mr-2");
+  }
+
+   
 
    function myFunction(x) {
    if (x.matches) { 
