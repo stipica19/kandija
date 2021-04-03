@@ -52,7 +52,7 @@
         <hr>
 <div class="col-md-12 clearfix" >
   <img class="img-fluid  align-self-center float-left pull-left mr-2" width="500px" height="500px" src="../public/<%= novost.images%>" alt="zupa kandija">
-<p id="log" class="slika-post img-fluid float-left pull-left " >
+<p id="log" class="slika-post" >
   
 
 </p>
@@ -112,21 +112,24 @@
 
    $('img').unwrap("p");
 
-
    function myFunction(x) {
    if (x.matches) { 
+    
     var element = document.getElementsByTagName("img");
   
     for(var i = 2 ; i<element.length;i++){
       element[i].style.width="300px"
       element[i].style.height="auto"
-    }    } 
+    }
+
+    } 
 }
 
     var x = window.matchMedia("(max-width: 400px)")
     myFunction(x) 
     x.addListener(myFunction) 
-
+    var element = document.getElementById("img");
+    element.classList.add("img-fluid align-self-center float-left pull-left mr-2");
   
 
 </script>
