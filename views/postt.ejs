@@ -111,6 +111,8 @@
    $log.append( html );
 
    $('img').unwrap("p");
+   var el = document.getElementsByTagName("img");
+   el.classList.add("float-left pull-left mr-2");
 
    function myFunction(x) {
    if (x.matches) { 
@@ -128,8 +130,7 @@
     var x = window.matchMedia("(max-width: 400px)")
     myFunction(x) 
     x.addListener(myFunction) 
-    var element = document.getElementsByTagName("img");
-    element.classList.add("img-fluid align-self-center float-left pull-left mr-2");
+    
   
 
 </script>
