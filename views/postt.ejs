@@ -1,148 +1,154 @@
 <meta property="fb_app_id" content="715696709360363" />
 <meta property="og:title" content="<%- novost.naslov%>">
 <meta property="og:description" content="<%= novost.description.replace(/(<([^>]+)>)/ig,'') %>">
-<meta property="og:image" content="<%= novost.images %>">
+<meta property="og:image" content="https://zupa-kandija.com/public/<%= novost.images%>">
 <meta property="og:url" content="https://www.zupa-kandija.com/novosti/<%= novost._id %>">
 <%- include ('partials/header.ejs') %>
 
 
-<%- include ('partials/nav.ejs') %>
-<style>
-  table {
-        font-family: verdana,arial,sans-serif;
-        font-size:11px;
-        color:#333333;
-        border-width: 1px;
-        border-color: #3A3A3A;
-        border-collapse: collapse;
-    }
-     th {
-        border-width: 1px;
-        padding: 8px;
-        border-style: solid;
-        border-color: #3A3A3A;
-        background-color: #B3B3B3;
-    }
-    td {
-        border-width: 1px;
-        padding: 8px;
-        border-style: solid;
-        border-color: #3A3A3A;
-        background-color: #ffffff;
-    }
-</style>
-<section class="gallery-block cards-gallery margina">
-  <div class="container">
+    <%- include ('partials/nav.ejs') %>
+        <style>
+            table {
+                font-family: verdana, arial, sans-serif;
+                font-size: 11px;
+                color: #333333;
+                border-width: 1px;
+                border-color: #3A3A3A;
+                border-collapse: collapse;
+            }
+            
+            th {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #3A3A3A;
+                background-color: #B3B3B3;
+            }
+            
+            td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #3A3A3A;
+                background-color: #ffffff;
+            }
+        </style>
+        <section class="gallery-block cards-gallery margina">
+            <div class="container">
 
-    <div class="row justify-content-center">
+                <div class="row justify-content-center">
 
-      <!-- Post Content Column -->
-      <div class="col-lg-12">
-       
-        <!-- Title -->
-        <h1 class="mt-4"><%= novost.naslov%></h1>
-        
-        <!-- Date/Time Posjeta -->
-        <div class="post-info">
-          <p><%= novost.datum.toLocaleDateString('en-GB') %></p>
-          <p class="visit">Posjeta: <%= novost.visit %></p></div>
-        
-        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&appId=715696709360363&width=0&height=0" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <!-- Post Content Column -->
+                    <div class="col-lg-12">
 
-        <hr>
-<div class="col-md-12 clearfix" >
-  <img class="img-fluid  align-self-center float-left pull-left mr-2" width="500px" height="500px" src="../public/<%= novost.images%>" alt="zupa kandija">
-<p id="log" class="slika-post" >
-  
+                        <!-- Title -->
+                        <h1 class="mt-4">
+                            <%= novost.naslov%>
+                        </h1>
 
-</p>
-</div>
-<div class="col-md-4">
-   
-</div>
-    <!-- Preview Image -->
-       
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hr_HR/sdk.js#xfbml=1&version=v9.0&appId=212297233590614&autoLogAppEvents=1" nonce="9xdNdlpI"></script> <!-- Post Content -->
-        <hr>
-   
-      </div> 
-      <!-- /.row -->
-      <div class="fb-share-button" data-href="https://www.zupa-kandija.com/novosti/<%= novost._id%>" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.zupa-kandija.com%2Fnovosti&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Podijeli</a></div>
-      
+                        <!-- Date/Time Posjeta -->
+                        <div class="post-info">
+                            <p>
+                                <%= novost.datum.toLocaleDateString('en-GB') %>
+                            </p>
+                            <p class="visit">Posjeta:
+                                <%= novost.visit %>
+                            </p>
+                        </div>
 
-</section>
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="social-icons">
-          <li><a href="/">NASLOVNA</a></li>
-          <li><a href="/">GALERIJA</a></li>
-          <li><a href="/ozupi">O ŽUPI</a></li>
-          <li><a href="/groblja">GROBLJA</a></li>
-          <li><a href="/novosti">NOVOSTI</a></li>
-          <li><a href="/contact">KONTAKT</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-12">
-        <div class="copyright-text">
-          <p>Copyright 2021 Župa Kandija. Sva prava pridržana | Development by: <a href="https://www.linkedin.com/in/stipica-klepic-27454115b/" target="_parent">Stipica</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<script>
- 
-   let myVar = '<%- JSON.stringify(novost.description) %>';
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&appId=715696709360363&width=0&height=0" width="0" height="0" style="border:none;overflow:hidden"
+                            scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
-   var $log = $( "#log" );
-   str = `${myVar}`;
-   
-    console.log(str);
+                        <hr>
+                        <div class="col-md-12 clearfix">
+                            <img class="img-fluid  align-self-center float-left pull-left mr-2" width="500px" height="500px" src="../public/<%= novost.images%>" alt="zupa kandija">
+                            <p id="log" class="slika-post">
 
-   html = $.parseHTML( str ),
-   console.log(html),
-   console.log(html.indexOf(2)),
-   nodeNames = [];
- 
-// Append the parsed HTML
-   $log.append( html );
 
-   $('img').unwrap("p");
+                            </p>
+                        </div>
+                        <div class="col-md-4">
 
-   var el = document.getElementsByTagName("img");
-    
-  for(var i=2;i<el.length;i++){
-   el[i].classList.add("img-fluid");
-   el[i].classList.add("float-left");
-   el[i].classList.add("pull-left");
-   el[i].classList.add("mr-2");
-  }
+                        </div>
+                        <!-- Preview Image -->
 
-   
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hr_HR/sdk.js#xfbml=1&version=v9.0&appId=212297233590614&autoLogAppEvents=1" nonce="9xdNdlpI"></script>
+                        <!-- Post Content -->
+                        <hr>
 
-   function myFunction(x) {
-   if (x.matches) { 
-    
-    var element = document.getElementsByTagName("img");
-  
-    for(var i = 2 ; i<element.length;i++){
-      element[i].style.width="300px"
-      element[i].style.height="auto"
-    }
+                    </div>
+                    <!-- /.row -->
+                    <div class="fb-share-button" data-href="https://www.zupa-kandija.com/novosti/<%= novost._id%>" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.zupa-kandija.com%2Fnovosti&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Podijeli</a></div>
 
-    } 
-}
 
-    var x = window.matchMedia("(max-width: 400px)")
-    myFunction(x) 
-    x.addListener(myFunction) 
-    
-  
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="social-icons">
+                            <li><a href="/">NASLOVNA</a></li>
+                            <li><a href="/">GALERIJA</a></li>
+                            <li><a href="/ozupi">O ŽUPI</a></li>
+                            <li><a href="/groblja">GROBLJA</a></li>
+                            <li><a href="/novosti">NOVOSTI</a></li>
+                            <li><a href="/contact">KONTAKT</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            <p>Copyright 2021 Župa Kandija. Sva prava pridržana | Development by: <a href="https://www.linkedin.com/in/stipica-klepic-27454115b/" target="_parent">Stipica</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            let myVar = '<%- JSON.stringify(novost.description) %>';
 
-</script>
+            var $log = $("#log");
+            str = `${myVar}`;
 
- 
-<%- include ('partials/footer.ejs') %>
+            console.log(str);
+
+            html = $.parseHTML(str),
+                console.log(html),
+                console.log(html.indexOf(2)),
+                nodeNames = [];
+
+            // Append the parsed HTML
+            $log.append(html);
+
+            $('img').unwrap("p");
+
+            var el = document.getElementsByTagName("img");
+
+            for (var i = 2; i < el.length; i++) {
+                el[i].classList.add("img-fluid");
+                el[i].classList.add("float-left");
+                el[i].classList.add("pull-left");
+                el[i].classList.add("mr-2");
+            }
+
+
+            function myFunction(x) {
+                if (x.matches) {
+
+                    var element = document.getElementsByTagName("img");
+
+                    for (var i = 2; i < element.length; i++) {
+                        element[i].style.width = "300px"
+                        element[i].style.height = "auto"
+                    }
+
+                }
+            }
+
+            var x = window.matchMedia("(max-width: 400px)")
+            myFunction(x)
+            x.addListener(myFunction)
+        </script>
+
+
+        <%- include ('partials/footer.ejs') %>
